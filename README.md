@@ -1,3 +1,25 @@
+# LocalVariable
+Import the module and create an object of the class <b>LocalVariable</b>. Call the <b>save</b> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
+<ul>
+      <li> read_int (var_name) </li>
+      <li> read_float (var_name) </li>
+      <li> read_str (var_name) </li>
+      <li> read_bool (var_name) </li>
+      <li> read_list (var_name) </li>
+      <li> read_tuple (var_name) </li>
+      <li> read_set (var_name) </li>
+      <li> read_dict (var_name) </li>
+ </ul>
+ </br></br>
+ <pre>
+      import PyVariable
+      data = Variables.LocalVariable()
+      data.save("Name", "John")  # This will store the variable Name with the value John
+      LocalName = data.read_str("Name")  # This will read the value of Name from cloud and store in LocalName
+      print(LocalName)  # This will print John
+</pre>
+
+</br></br></br></br></br>
 # CloudVariable
 </br>
 <i>Step1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
@@ -14,11 +36,11 @@
 <i>Step11</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
 <i>Step12</i>: &nbsp; After that create an object of the class <b>CloudVariable</b> with the url you copied as argument. </br></br>
 
-Everything is now ready. Simply call the <b>save</b> method with the name and the value of a variable as argument to store your data online and call the <b>read</b> method with the name of your variable as argument to read the value. </br>
+Everything is now ready. Simply call the <b>save</b> method with the name and the value of a variable as argument to store your data online and call the <b>read</b> method with the name of your variable as argument to read the value. <i>Note: The returned value will automatically be in your desired data type.</i></br>
 </br></br>
 Here is a sample code -
 <pre>
-      import Variables
+      import PyVariable
       data = Variables.CloudVariable(The_Url_You_Copied)
       data.save("Name", "John")  # This will store the variable Name with the value John
       LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
