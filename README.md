@@ -24,12 +24,11 @@ Import the module and create an object of the class <b>LocalVariable</b>. Call t
       import PyVariable
       count = 0
       data = Variables.LocalVariable()
-      count = data.read_str("count")  # This will read the value of Name from cloud and store in LocalName
+      count = data.read_str("count")  # This will read the value of count and store in count variable
       count = count + 1
-      data.save("count", count)  # This will store the variable Name with the value John
+      data.save("count", count)  # This will store the variable count with the value John
       print("This program ran" + str(count) + "times")
       # do something below ;)
-      
 </pre>
 
 </br></br></br></br></br>
