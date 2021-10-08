@@ -9,7 +9,8 @@
 <i>Step7</i>: &nbsp; Click on <b>Realtime Database</b> on the left. </br>
 <i>Step8</i>: &nbsp; Click on <b>Create Database</b> and select your nearest location. </br>
 <i>Step9</i>: &nbsp; After clicking <b>Next</b>, Select <b>Start in test mode</b> and click on <b>Enable</b> </br>
-<i>Step10</i>: &nbsp; We are almost done! Now just copy this url as shown in the image.</br>
+<i>Step10</i>: &nbsp; Finally, just copy this url as shown in the image.</br></br>
+<p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
 <i>Step11</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
 <i>Step12</i>: &nbsp; After that create an object of the class <b>CloudVariable</b> with the url you copied as argument. </br></br>
 
@@ -18,7 +19,7 @@ Everything is now ready. Simply call the <b>save</b> method with the name and th
 Here is a sample code -
 <pre>
       import Variables
-      data = Variables.CloudVariable()
+      data = Variables.CloudVariable(The_Url_You_Copied)
       data.save("Name", "John")  # This will store the variable Name with the value John
       LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
       print(LocalName)  # This will print John
