@@ -9,14 +9,27 @@ Import the module and create an object of the class <b>LocalVariable</b>. Call t
       <li> read_tuple (var_name) </li>
       <li> read_set (var_name) </li>
       <li> read_dict (var_name) </li>
- </ul>
- </br></br>
- <pre>
+</ul>
+</br></br>
+## Sample 01:
+<pre>
       import PyVariable
       data = Variables.LocalVariable()
       data.save("Name", "John")  # This will store the variable Name with the value John
       LocalName = data.read_str("Name")  # This will read the value of Name from cloud and store in LocalName
       print(LocalName)  # This will print John
+</pre>
+##Sample 02: This program counts how many times you runned this program.
+<pre>
+      import PyVariable
+      count = 0
+      data = Variables.LocalVariable()
+      count = data.read_str("count")  # This will read the value of Name from cloud and store in LocalName
+      count = count + 1
+      data.save("count", count)  # This will store the variable Name with the value John
+      print("This program ran" + str(count) + "times")
+      # do something below ;)
+      
 </pre>
 
 </br></br></br></br></br>
