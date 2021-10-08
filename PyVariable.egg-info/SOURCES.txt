@@ -1,0 +1,9 @@
+setup.py
+PyVariable.egg-info/PKG-INFO
+PyVariable.egg-info/SOURCES.txt
+PyVariable.egg-info/dependency_links.txt
+PyVariable.egg-info/not-zip-safe
+PyVariable.egg-info/requires.txt
+PyVariable.egg-info/top_level.txt
+pyvariable/__init__.py
+pyvariable/pyvariable.py
