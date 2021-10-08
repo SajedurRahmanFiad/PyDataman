@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: PyVariable
+Version: 0.0.1
+Summary: Store your variables outside the code!
+Home-page: UNKNOWN
+Author: Sajedur Rahman Fiad
+Author-email: neural.gen.official@gmail.com
+License: UNKNOWN
+Description: # Installation :
+        Simply type <code> pip install pyvariable </code> in your command prompt.
+        </br></br></br>
+        # Description (How to use):
+        Go to https://github.com/NeuralGen/PyVariable/blob/main/README.md
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
