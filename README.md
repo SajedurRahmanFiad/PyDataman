@@ -17,9 +17,9 @@ Everything is now ready. Simply call the <b>save</b> method with the name and th
 </br></br>
 Here is a sample code -
 <pre>
-            import Variables
-            data = Variables.CloudVariable()
-            data.save("Name", "John")  # This will store the variable Name with the value John
-            LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
-            print(LocalName)  # This will print John
+      import Variables
+      data = Variables.CloudVariable()
+      data.save("Name", "John")  # This will store the variable Name with the value John
+      LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
+      print(LocalName)  # This will print John
 </pre>
