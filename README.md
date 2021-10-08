@@ -13,22 +13,22 @@ Import the module and create an object of the class <b>LocalVariable</b>. Call t
 </br></br>
 ## Sample 01:
 <pre>
-      import PyVariable
-      data = Variables.LocalVariable()
-      data.save("Name", "John")  # This will store the variable Name with the value John
-      LocalName = data.read_str("Name")  # This will read the value of Name from cloud and store in LocalName
-      print(LocalName)  # This will print John
+import PyVariable
+data = Variables.LocalVariable()
+data.save("Name", "John")  # This will store the variable Name with the value John
+LocalName = data.read_str("Name")  # This will read the value of Name from cloud and store in LocalName
+print(LocalName)  # This will print John
 </pre>
 ##Sample 02: This program counts how many times you runned this program.
 <pre>
-      import PyVariable
-      count = 0
-      data = Variables.LocalVariable()
-      count = data.read_str("count")  # This will read the value of count and store in count variable
-      count = count + 1
-      data.save("count", count)  # This will store the variable count with the value John
-      print("This program ran" + str(count) + "times")
-      # do something below ;)
+import PyVariable
+count = 0
+data = Variables.LocalVariable()
+count = data.read_int("count")  # This will read the value of count and store in count variable
+count = count + 1
+data.save("count", count)  # This will store the variable count with the value John
+print("This program ran" + str(count) + "times")
+# do something below ;)
 </pre>
 
 </br></br></br></br></br>
@@ -52,9 +52,9 @@ Everything is now ready. Simply call the <b>save</b> method with the name and th
 </br></br>
 Here is a sample code -
 <pre>
-      import PyVariable
-      data = Variables.CloudVariable(The_Url_You_Copied)
-      data.save("Name", "John")  # This will store the variable Name with the value John
-      LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
-      print(LocalName)  # This will print John
+import PyVariable
+data = Variables.CloudVariable(The_Url_You_Copied)
+data.save("Name", "John")  # This will store the variable Name with the value John
+LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
+print(LocalName)  # This will print John
 </pre>
