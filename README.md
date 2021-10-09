@@ -69,3 +69,21 @@ LocalName = data.read("Name")  # This will read the value of Name from your data
 print(LocalName)  # This will print John
 </pre>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
+
+</br></br></br></br></br>
+
+# Some example usage
+Example 1 (Count how many times a code is run):
+<pre>
+import pyvariable  # Importing the module
+
+count = 0
+data = pyvariable.LocalVariable()  # Create the object
+if not data.exists("count"):  # Create a variable if it doesn't exist
+    data.save("count", 0)
+count = data.read_int("count")  # This will read the value of count and store in count variable
+count = count + 1
+data.save("count", count)  # This will store the variable count with the value John
+print("This program ran " + str(count) + " times")
+
+</pre>
