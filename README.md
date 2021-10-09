@@ -16,7 +16,7 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 
 </br></br></br></br>
 
-# LocalVariable
+# Variable in Drive
 Import the module and create an object of the class <code> LocalVariable</code>. Call the <code> save()</code> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
 <ul>
       <li><code> read_int (var_name) </code></li>
@@ -49,7 +49,8 @@ else:
 </pre>
 
 </br></br></br></br></br>
-# CloudVariable
+
+# Variable in online database
 <h3>Setting up your database:</h3>
 <i>Step 1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
 <i>Step 2</i>: &nbsp; Login with your google account. </br>
