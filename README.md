@@ -61,10 +61,19 @@ else:
 <i>Step 7</i>: &nbsp; Click on <b>Realtime Database</b> on the left. </br>
 <i>Step 8</i>: &nbsp; Click on <b>Create Database</b> and select your nearest location. </br>
 <i>Step 9</i>: &nbsp; After clicking <b>Next</b>, Select <b>Start in test mode</b> and click on <b>Enable</b> </br>
-<i>Step 10</i>: &nbsp; Finally, just copy this url as shown in the image.</br></br>
+<i>Step 10</i>: &nbsp; Go to <b> Rules</b> tab and replace the code by this - </br>
+<pre>
+{
+  "rules": {
+    ".read": "True",
+    ".write": "True",
+  }
+}
+</pre>
+<i>Step 11</i>: &nbsp; Finally, come back to <b>Data</b> tab and just copy this url shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
-<i>Step11</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
-<i>Step12</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
+<i>Step12</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
+<i>Step13</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
 
 Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b>
 </br></br></br>
@@ -81,7 +90,7 @@ print(LocalName)  # This will print John
 </br></br></br></br>
 
 # Some example usage
-Example 1 (Count how many times a code is run):
+Example 1.1 (Count how many times a code is run) - Saving in your drive:
 <pre>
 import pyvariable  # Importing the module
 
@@ -90,6 +99,22 @@ data = pyvariable.LocalVariable()  # Create the object
 if not data.exists("count"):  # Create a variable if it doesn't exist
     data.save("count", 0)
 count = data.read_int("count")  # This will read the value of count and store in count variable
+count = count + 1
+data.save("count", count)  # This will store the variable count with the value John
+print("This program ran " + str(count) + " times")
+
+</pre>
+</br>
+
+Example 1.2 (Count how many times a code is run) - Saving in online database:
+<pre>
+import pyvariable  # Importing the module
+
+count = 0
+data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
+if not data.exists("count"):  # Create a variable if it doesn't exist
+    data.save("count", 0)
+count = data.read("count")  # This will read the value of count and store in count variable
 count = count + 1
 data.save("count", count)  # This will store the variable count with the value John
 print("This program ran " + str(count) + " times")
