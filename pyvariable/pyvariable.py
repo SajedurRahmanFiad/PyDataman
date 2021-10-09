@@ -124,6 +124,10 @@ class CloudVariable:
     def __init__(self, url):
         from firebase import firebase
         self.firebase = firebase.FirebaseApplication(url, None)
+        try:
+            x = self.get_all_as_dict()
+        except:
+            self.save('djgndsfihndsiuhndhtujhcfjhgfvyjdi', 'riusdgnsfctjhcftjhgcjcgfduidifhjdu')
 
 
     def save(self, name, val):
@@ -148,9 +152,16 @@ class CloudVariable:
             
         return (variables)
 
+
     def read(self, name):
         variables = self.get_all_as_dict()
         return variables.get(name)
+
+
+    def exists(self, name):
+        if name in list(self.get_all_as_dict().keys()):
+            return True
+        else: return False
 
 
 class integer:
@@ -192,13 +203,14 @@ class string:
 
 
 if __name__ == "__main__":
-    #data = CloudVariable('https://vari-1fdcf-default-rtdb.asia-southeast1.firebasedatabase.app/')
+    data = CloudVariable('https://vari-1fdcf-default-rtdb.asia-southeast1.firebasedatabase.app/')
     #data.save("Name", "Fiad")
     #data.save("Number", 5)
     #data.save("FLOAT", 0.555)
     #print(data.read("Name"))
+    print(data.exists("Name"))
 
-    data = LocalVariable()
+    #data = LocalVariable()
     #print(data.read_int("Number"))
 
-    print(data.is_android())
+    #print(data.is_android())
