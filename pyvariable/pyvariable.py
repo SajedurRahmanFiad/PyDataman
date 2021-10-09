@@ -1,66 +1,81 @@
+folder = "Data"
+extension = ".fiad"
+
 class LocalVariable:
     
     def __init__(self):
-        self.folder = "Data"
-        self.extension = ".fiad"
         import os
         import ctypes
-        if not os.path.exists(self.folder):
-            os.makedirs(self.folder)
-        ctypes.windll.kernel32.SetFileAttributesW(self.folder, 2)
+        
+        if not self.is_android():
+            if not os.path.exists(folder):
+                os.makedirs(folder)
+            ctypes.windll.kernel32.SetFileAttributesW(folder, 2)
+
+        else:
+            if not os.path.exists(folder):
+                os.makedirs(folder)
+
+
+    def is_android(self):
+        try:
+            from ctypes import windll
+        except:
+            return True
+        return False
 
             
     def save(self, name, data):
         if type(data) is list:
             import pickle
-            with open(self.folder+"\\"+name+self.extension, 'wb') as fp:
+            with open(folder+"\\"+name+extension, 'wb') as fp:
                 pickle.dump(data, fp)
                 fp.close()
         elif type(data) is dict:
             import pickle
-            with open(self.folder+"\\"+name+self.extension, 'wb') as fp:
+            with open(folder+"\\"+name+extension, 'wb') as fp:
                 pickle.dump(data, fp)
                 fp.close()
         elif type(data) is set:
             import pickle
-            with open(self.folder+"\\"+name+self.extension, 'wb') as fp:
+            with open(folder+"\\"+name+extension, 'wb') as fp:
                 pickle.dump(data, fp)
                 fp.close()
         elif type(data) is tuple:
             import pickle
-            with open(self.folder+"\\"+name+self.extension, 'wb') as fp:
+            with open(folder+"\\"+name+extension, 'wb') as fp:
                 pickle.dump(data, fp)
                 fp.close() 
         else:      
             data = str(data)
-            f = open(self.folder+"\\"+name+self.extension, "w")
+            f = open(folder+"\\"+name+extension, "w")
             f.write(data)
             f.close()
 
 
     def read_int(self, name):
-        f = open(self.folder+"\\"+name+self.extension, "r")
+        f = open(folder+"\\"+name+extension, "r")
         data = f.read()
         f.close()
         return int(data)
 
 
     def read_float(self, name):
-        f = open(self.folder+"\\"+name+self.extension, "r")
+        f = open(folder+"\\"+name+extension, "r")
         data = f.read()
         f.close()
         return float(data)
 
 
     def read_str(self, name):
-        f = open(self.folder+"\\"+name+self.extension, "r")
+        f = open(folder+"\\"+name+extension, "r")
         data = f.read()
         f.close()
         return str(data)
 
 
     def read_bool(self, name):
-        f = open(self.folder+"\\"+name+self.extension, "r")
+        f = open(folder+"\\"+name+extension, "r")
         data = f.read()
         f.close()
         return bool(data)
@@ -68,7 +83,7 @@ class LocalVariable:
 
     def read_list(self, name):
         import pickle
-        with open (self.folder+"\\"+name+self.extension, 'rb') as fp:
+        with open (folder+"\\"+name+extension, 'rb') as fp:
             itemlist = pickle.load(fp)
             fp.close()
         return list(itemlist)
@@ -76,7 +91,7 @@ class LocalVariable:
 
     def read_set(self, name):
         import pickle
-        with open (self.folder+"\\"+name+self.extension, 'rb') as fp:
+        with open (folder+"\\"+name+extension, 'rb') as fp:
             itemlist = pickle.load(fp)
             fp.close()
         return set(itemlist)
@@ -84,7 +99,7 @@ class LocalVariable:
 
     def read_tuple(self, name):
         import pickle
-        with open (self.folder+"\\"+name+self.extension, 'rb') as fp:
+        with open (folder+"\\"+name+extension, 'rb') as fp:
             itemlist = pickle.load(fp)
             fp.close()
         return tuple(itemlist)
@@ -92,10 +107,14 @@ class LocalVariable:
 
     def read_dict(self, name):
         import pickle
-        with open (self.folder+"\\"+name+self.extension, 'rb') as fp:
+        with open (folder+"\\"+name+extension, 'rb') as fp:
             itemlist = pickle.load(fp)
             fp.close()
         return dict(itemlist)
+
+    def exists(self, name):
+        import os.path
+        return os.path.isfile(folder+"\\"+name+extension)
 
 
 
@@ -134,13 +153,52 @@ class CloudVariable:
         return variables.get(name)
 
 
+class integer:
+    
+    def __new__(self, name):
+        import os.path
+        self.data = LocalVariable()
+        self.name = name
+        if os.path.isfile(folder+"\\"+self.name+extension):
+            return self.data.read_int(name)
+        else:
+            raise Exception("No variable named {}, try creating it using LocalVariable().save(name, value)".format(self.name))
+
+
+class float:
+    
+    def __new__(self, name):
+        import os.path
+        self.data = LocalVariable()
+        self.name = name
+        if os.path.isfile(folder+"\\"+self.name+extension):
+            return self.data.read_float(name)
+        else:
+            raise Exception("No variable named {}, try creating it using LocalVariable().save(name, value)".format(self.name))
+
+
+class string:
+    
+    def __new__(self, name):
+        import os.path
+        self.data = LocalVariable()
+        self.name = name
+        if os.path.isfile(folder+"\\"+self.name+extension):
+            return self.data.read_str(name)
+        else:
+            raise Exception("No variable named {}, try creating it using LocalVariable().save(name, value)".format(self.name))
+
+
+
 
 if __name__ == "__main__":
-    data = CloudVariable('https://vari-1fdcf-default-rtdb.asia-southeast1.firebasedatabase.app/')
+    #data = CloudVariable('https://vari-1fdcf-default-rtdb.asia-southeast1.firebasedatabase.app/')
     #data.save("Name", "Fiad")
     #data.save("Number", 5)
     #data.save("FLOAT", 0.555)
-    print(data.read("Name"))
+    #print(data.read("Name"))
 
-    #data = LocalVariable()
+    data = LocalVariable()
     #print(data.read_int("Number"))
+
+    print(data.is_android())
