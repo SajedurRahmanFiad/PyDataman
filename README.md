@@ -70,7 +70,7 @@ print(LocalName)  # This will print John
 </pre>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
-</br></br></br></br></br>
+</br></br></br></br>
 
 # Some example usage
 Example 1 (Count how many times a code is run):
@@ -87,3 +87,11 @@ data.save("count", count)  # This will store the variable count with the value J
 print("This program ran " + str(count) + " times")
 
 </pre>
+
+</br></br></br></br>
+
+# Lisence
+This module is completely free and open source. You can freely use and modify the module if you want. Any improvement will be highly appreciated ;) </br>
+Created by <b> Sajedur Rahman Fiad </b> </br>
+Email : <code> neural.gen.official@gmail.com</code> </br>
+<i> Let me know your valuable feedback. </i>
