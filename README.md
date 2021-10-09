@@ -28,7 +28,7 @@ Import the module and create an object of the class <code> LocalVariable</code>.
       <li><code> read_set (var_name) </code></li>
       <li><code> read_dict (var_name) </code></li>
 </ul>
-Also, call <code> exists()</code> method with name of a variale as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
+Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
 </br></br>
 Here is a sample code -
 <pre>
@@ -85,6 +85,7 @@ data.save("Name", "John")  # This will store the variable Name with the value Jo
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
 print(LocalName)  # This will print John
 </pre>
+Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br></br>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
 </br></br></br></br>
