@@ -6,7 +6,7 @@ Again, let's say you don't want a variable to be reset everytime you run your co
 </br></br></br>
 
 # Installation
-Installing the module is quite easy ;)
+Installing the module is quite easy ;) </br>
 Simple open your terminal and enter <code> pip install pyvariable</code>.</br></br>
 <b><i>Note: If you face any error like <code> ModuleNotFoundError: No module named 'Crypto'</code>, then follow these steps - </i></b></br>
 <i>Step 1:</i> &nbsp; Open your terminal. </br>
@@ -85,7 +85,7 @@ data.save("Name", "John")  # This will store the variable Name with the value Jo
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
 print(LocalName)  # This will print John
 </pre>
-Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br></br>
+Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br></br>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
 </br></br></br></br>
