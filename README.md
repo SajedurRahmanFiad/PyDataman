@@ -48,7 +48,7 @@ else:
       print("The variable X doesn't exist")
 </pre>
 
-</br></br></br></br></br>
+</br></br></br></br>
 
 # Variable in online database
 <h3>Setting up your database:</h3>
