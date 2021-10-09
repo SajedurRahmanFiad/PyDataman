@@ -1,5 +1,11 @@
+# What is PyVariable?
+Basically what this module does is to save variables ouside the code. </br>
+Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of PyVariable. Yes you can also do it without PyVariable, but you've to write more to do so. Again, if you don't want a variable to be reset everytime you run your code, you should use PyVariable. Using PyVariable, you can save a variable in your device (offline) or in an online database. It's really simple enough.
+
+</br></br></br>
+
 # Installation
-Installing the module is simple enough ;)
+Installing the module is quite easy ;)
 Simple open your terminal and enter <code> pip install pyvariable</code>.</br></br>
 <b><i>Note: If you face any error like <code> ModuleNotFoundError: No module named 'Crypto'</code>, then follow these steps - </i></b></br>
 <i>Step 1:</i> &nbsp; Open your terminal. </br>
@@ -91,7 +97,7 @@ print("This program ran " + str(count) + " times")
 </br></br></br></br>
 
 # Lisence
-This module is completely free and open source. You can freely use and modify the module if you want. Any improvement will be highly appreciated ;) </br>
+This module is completely free and open source. You can freely use and modify the module if you want. Any suggestion will be highly appreciated ;) </br>
 Created by <b> Sajedur Rahman Fiad </b> </br>
 Email : <code> neural.gen.official@gmail.com</code> </br>
 <i> Let me know your valuable feedback. </i>
