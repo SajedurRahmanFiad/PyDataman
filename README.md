@@ -1,6 +1,7 @@
 # What is PyVariable?
-Basically what this module does is to save variables ouside the code. </br>
-Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of PyVariable. Yes you can also do it without PyVariable, but you've to write more to do so. Again, if you don't want a variable to be reset everytime you run your code, you should use PyVariable. Using PyVariable, you can save a variable in your device (offline) or in an online database. It's really simple enough.
+<b>Basically this module is for saving variables outside your code so that you don't lose them.</b> </br>
+Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyVariable</b>. Yes you can also do it without <b>PyVariable</b>, but you've to write more to do so. </br>
+Again, let's say you don't want a variable to be reset everytime you run your code, here you must use <b>PyVariable</b>. Using <b>PyVariable</b>, you can save a variable in your drive (offline) or in an online database. It's really simple enough.
 
 </br></br></br>
 
@@ -16,18 +17,18 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 </br></br></br></br>
 
 # LocalVariable
-Import the module and create an object of the class <b>LocalVariable</b>. Call the <b>save</b> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
+Import the module and create an object of the class <code> LocalVariable</code>. Call the <code> save()</code> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
 <ul>
-      <li> read_int (var_name) </li>
-      <li> read_float (var_name) </li>
-      <li> read_str (var_name) </li>
-      <li> read_bool (var_name) </li>
-      <li> read_list (var_name) </li>
-      <li> read_tuple (var_name) </li>
-      <li> read_set (var_name) </li>
-      <li> read_dict (var_name) </li>
+      <li><code> read_int (var_name) </code></li>
+      <li><code> read_float (var_name) </code></li>
+      <li><code> read_str (var_name) </code></li>
+      <li><code> read_bool (var_name) </code></li>
+      <li><code> read_list (var_name) </code></li>
+      <li><code> read_tuple (var_name) </code></li>
+      <li><code> read_set (var_name) </code></li>
+      <li><code> read_dict (var_name) </code></li>
 </ul>
-Also, call exists() method with name of a variale as argument to check if the variable exists. <b><i>Note: It will return True or False.</i></b></br>
+Also, call <code> exists()</code> method with name of a variale as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
 </br></br>
 Here is a sample code -
 <pre>
@@ -62,10 +63,10 @@ else:
 <i>Step 10</i>: &nbsp; Finally, just copy this url as shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
 <i>Step11</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
-<i>Step12</i>: &nbsp; After that create an object of the class <b>CloudVariable</b> with the url you copied as argument. </br></br>
+<i>Step12</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
 
-Everything is now ready. Simply call the <b>save</b> method with the name and the value of a variable as argument to store your data online and call the <b>read</b> method with the name of your variable as argument to read the value. <i>Note: The returned value will automatically be in your desired data type.</i></br>
-</br></br>
+Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b>
+</br></br></br>
 Here is a sample code -
 <pre>
 import pyvariable
