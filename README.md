@@ -1,3 +1,14 @@
+# Installation
+Installing the module is simple enough ;)
+Simple open your terminal and enter <code> pip install pyvariable</code>.</br></br>
+<b><i>Note: If you face any error like <code> ModuleNotFoundError: No module named 'Crypto'</code>, then follow these steps - </i></b></br>
+<i>Step 1:</i> &nbsp; Open your terminal. </br>
+<i>Step 2:</i> &nbsp; Enter <code> pip uninstall crypto</code>. </br>
+<i>Step 3:</i> &nbsp; Enter <code> pip uninstall pycryptodome</code>. </br>
+<i>Step 4:</i> &nbsp; Enter <code> pip install pycryptodome</code>.
+
+</br></br></br></br>
+
 # LocalVariable
 Import the module and create an object of the class <b>LocalVariable</b>. Call the <b>save</b> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
 <ul>
@@ -10,40 +21,39 @@ Import the module and create an object of the class <b>LocalVariable</b>. Call t
       <li> read_set (var_name) </li>
       <li> read_dict (var_name) </li>
 </ul>
+Also, call exists() method with name of a variale as argument to check if the variable exists. <b><i>Note: It will return True or False.</i></b></br>
 </br></br>
-## Sample 01:
+Here is a sample code -
 <pre>
-import PyVariable
-data = Variables.LocalVariable()
+import pyvariable
+data = pyvariable.LocalVariable()
 data.save("Name", "John")  # This will store the variable Name with the value John
-LocalName = data.read_str("Name")  # This will read the value of Name from cloud and store in LocalName
+LocalName = data.read_str("Name")  # This will read the value of Name from files and store in LocalName
 print(LocalName)  # This will print John
 </pre>
-##Sample 02: This program counts how many times you runned this program.
+Another example of checking if a variable exists -
 <pre>
 import PyVariable
-count = 0
 data = Variables.LocalVariable()
-count = data.read_int("count")  # This will read the value of count and store in count variable
-count = count + 1
-data.save("count", count)  # This will store the variable count with the value John
-print("This program ran" + str(count) + "times")
-# do something below ;)
+if data.exists("X"):  # The method returns true if the variable exists
+      print("The variable X exists")
+else:
+      print("The variable X doesn't exist")
 </pre>
 
 </br></br></br></br></br>
 # CloudVariable
-</br>
-<i>Step1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
-<i>Step2</i>: &nbsp; Login with your google account. </br>
-<i>Step3</i>: &nbsp; Click on <b>Add Project</b></br>
-<i>Step4</i>: &nbsp; Enter any name (The name doesn't matter at all). </br>
-<i>Step5</i>: &nbsp; Disable <b>Google Analytics</b> and click on continue. </br>
-<i>Step6</i>: &nbsp; After the the database creation is finished, click on continue and you'll see a window like this. </br>
-<i>Step7</i>: &nbsp; Click on <b>Realtime Database</b> on the left. </br>
-<i>Step8</i>: &nbsp; Click on <b>Create Database</b> and select your nearest location. </br>
-<i>Step9</i>: &nbsp; After clicking <b>Next</b>, Select <b>Start in test mode</b> and click on <b>Enable</b> </br>
-<i>Step10</i>: &nbsp; Finally, just copy this url as shown in the image.</br></br>
+<h3>Setting up your database:</h3>
+<i>Step 1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
+<i>Step 2</i>: &nbsp; Login with your google account. </br>
+<i>Step 3</i>: &nbsp; Click on <b>Add Project</b></br>
+<i>Step 4</i>: &nbsp; Enter any name (The name doesn't matter at all). </br>
+<i>Step 5</i>: &nbsp; Disable <b>Google Analytics</b> and click on continue. </br>
+<i>Step 6</i>: &nbsp; After the the database creation is finished, click on continue and you'll see a window like this. </br>
+<i>Step 7</i>: &nbsp; Click on <b>Realtime Database</b> on the left. </br>
+<i>Step 8</i>: &nbsp; Click on <b>Create Database</b> and select your nearest location. </br>
+<i>Step 9</i>: &nbsp; After clicking <b>Next</b>, Select <b>Start in test mode</b> and click on <b>Enable</b> </br>
+<i>Step 10</i>: &nbsp; Finally, just copy this url as shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
 <i>Step11</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
 <i>Step12</i>: &nbsp; After that create an object of the class <b>CloudVariable</b> with the url you copied as argument. </br></br>
@@ -52,9 +62,10 @@ Everything is now ready. Simply call the <b>save</b> method with the name and th
 </br></br>
 Here is a sample code -
 <pre>
-import PyVariable
-data = Variables.CloudVariable(The_Url_You_Copied)
+import pyvariable
+data = pyvariable.CloudVariable(The_Url_You_Copied)
 data.save("Name", "John")  # This will store the variable Name with the value John
-LocalName = data.read("Name")  # This will read the value of Name from cloud and store in LocalName
+LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
 print(LocalName)  # This will print John
 </pre>
+<b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
