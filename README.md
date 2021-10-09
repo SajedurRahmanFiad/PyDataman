@@ -1,5 +1,5 @@
 # What is PyVariable?
-<b>Basically this module is for saving variables outside your code so that you don't lose them.</b> </br>
+<b>Basically this module is for saving variables outside your code so that you don't lose their value.</b> </br>
 Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyVariable</b>. Yes you can also do it without <b>PyVariable</b>, but you've to write more to do so. </br>
 Again, let's say you don't want a variable to be reset everytime you run your code, here you must use <b>PyVariable</b>. Using <b>PyVariable</b>, you can save a variable in your drive (offline) or in an online database. It's really simple enough.
 
