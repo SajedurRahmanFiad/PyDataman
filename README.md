@@ -16,7 +16,7 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 
 </br></br></br></br>
 
-# Variable in Drive
+# Variable in Folder
 Import the module and create an object of the class <code> LocalVariable</code>. Call the <code> save()</code> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
 <ul>
       <li><code> read_int (var_name) </code></li>
@@ -40,9 +40,9 @@ print(LocalName)  # This will print John
 </pre>
 Another example of checking if a variable exists -
 <pre>
-import PyVariable
-data = Variables.LocalVariable()
-if data.exists("X"):  # The method returns true if the variable exists
+import pyvariable
+data = pyvariable.LocalVariable()
+if data.exists("X"):  # The method returns true if the variable exists in your folder
       print("The variable X exists")
 else:
       print("The variable X doesn't exist")
@@ -76,6 +76,7 @@ else:
 <i>Step13</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
 
 Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b>
+Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br>
 </br></br></br>
 Here is a sample code -
 <pre>
@@ -85,7 +86,15 @@ data.save("Name", "John")  # This will store the variable Name with the value Jo
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
 print(LocalName)  # This will print John
 </pre>
-Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br></br>
+Another example of checking if a variable exists -
+<pre>
+import pyvariable
+data = pyvariable.CloudVariable(The_Url_You_Copied)
+if data.exists("X"):  # The method returns true if the variable exists in your database
+      print("The variable X exists")
+else:
+      print("The variable X doesn't exist")
+</pre>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
 </br></br></br></br>
