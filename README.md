@@ -136,5 +136,5 @@ print("This program ran " + str(count) + " times")
 # Lisence
 This module is completely free and open source. You can freely use and modify the module if you want. Any suggestion will be highly appreciated ;) </br>
 Created by <b> Sajedur Rahman Fiad </b> </br>
-Email : <code> neural.gen.official@gmail.com</code> </br>
+Email : <code> neural.gen.official@gmail.com</code> </br></br>
 <i> Let me know your valuable feedback. </i>
