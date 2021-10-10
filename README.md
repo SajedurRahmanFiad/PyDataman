@@ -1,3 +1,8 @@
+![Android or Windows](https://img.shields.io/badge/OS-Android%20%20%7C%20%20Windows-orange) &nbsp; &nbsp;
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-orange)
+
+</br>
+
 # What is PyVariable?
 <b>Basically this module is for saving variables outside your code so that you don't lose their value.</b> </br>
 Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyVariable</b>. Yes you can also do it without <b>PyVariable</b>, but you've to write more to do so. </br>
