@@ -37,22 +37,22 @@ Import the module and create an object of the class <code> LocalVariable</code>.
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
 </br></br>
 Here is a sample code -
-<pre>
-import pyvariable
-data = pyvariable.LocalVariable()
-data.save("Name", "John")  # This will store the variable Name with the value John
-LocalName = data.read_str("Name")  # This will read the value of Name from files and store in LocalName
-print(LocalName)  # This will print John
-</pre>
+
+    import pyvariable
+    data = pyvariable.LocalVariable()
+    data.save("Name", "John")  # This will store the variable Name with the value John
+    LocalName = data.read_str("Name")  # This will read the value of Name from files and store in LocalName
+    print(LocalName)  # This will print John
+
 Another example of checking if a variable exists -
-<pre>
-import pyvariable
-data = pyvariable.LocalVariable()
-if data.exists("X"):  # The method returns true if the variable exists in your folder
-      print("The variable X exists")
-else:
-      print("The variable X doesn't exist")
-</pre>
+
+    import pyvariable
+    data = pyvariable.LocalVariable()
+    if data.exists("X"):  # The method returns true if the variable exists in your folder
+          print("The variable X exists")
+    else:
+          print("The variable X doesn't exist")
+
 
 </br></br></br></br>
 
@@ -68,14 +68,14 @@ else:
 <i>Step 8</i>: &nbsp; Click on <b>Create Database</b> and select your nearest location. </br>
 <i>Step 9</i>: &nbsp; After clicking <b>Next</b>, Select <b>Start in test mode</b> and click on <b>Enable</b> </br>
 <i>Step 10</i>: &nbsp; Go to <b> Rules</b> tab and replace the code by this - </br>
-<pre>
-{
-  "rules": {
-    ".read": "True",
-    ".write": "True",
-  }
-}
-</pre>
+
+    {
+      "rules": {
+        ".read": "True",
+        ".write": "True",
+      }
+    }
+    
 <i>Step 11</i>: &nbsp; Finally, come back to <b>Data</b> tab and just copy this url shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
 <i>Step 12</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
@@ -85,24 +85,24 @@ Everything is now ready. Simply call the <code> save()</code> method with the na
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br>
 </br></br></br>
 Here is a sample code -
-<pre>
-import pyvariable
 
-data = pyvariable.CloudVariable(The_Url_You_Copied)
-data.save("Name", "John")  # This will store the variable Name with the value John
-LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
-print(LocalName)  # This will print John
-</pre>
+    import pyvariable
+
+    data = pyvariable.CloudVariable(The_Url_You_Copied)
+    data.save("Name", "John")  # This will store the variable Name with the value John
+    LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
+    print(LocalName)  # This will print John
+    
 Another example of checking if a variable exists -
-<pre>
-import pyvariable
 
-data = pyvariable.CloudVariable(The_Url_You_Copied)
-if data.exists("X"):  # The method returns true if the variable exists in your database
-      print("The variable X exists")
-else:
-      print("The variable X doesn't exist")
-</pre>
+    import pyvariable
+
+    data = pyvariable.CloudVariable(The_Url_You_Copied)
+    if data.exists("X"):  # The method returns true if the variable exists in your database
+          print("The variable X exists")
+    else:
+          print("The variable X doesn't exist")
+          
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
 
@@ -144,44 +144,43 @@ Everything is now ready. Simply call the <code> upload()</code> method with the 
 Some othe methods available in this class:</br>
 <ul>
       <li><code> exists (file_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
-      <li><code> download_all (path) </code> - This will download all the files available in your storage</li>
-      <li><code> get_all_file_names () </code> - Ths will return a list of all file names available in your storage.</li>
+      <li><code> download_all (path) </code> - This will download all the files available in your database</li>
+      <li><code> get_all_file_names () </code> - Ths will return a list of all file names available in your database.</li>
 </ul>
 </br></br></br>
 Here is a sample code -
-<pre>
-import pyvariable
 
+    import pyvariable
 
-#You must change the values of config as your own info, otherwise the code won't work
-config = {
-    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-    "authDomain": "variables-2da3.firebaseapp.com",
-    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "storageBucket": "variables-2da3.appspot.com",
-}
-file = pyvariable.CloudFile(config, serviceAccount)
-file.upload("MyFile.png")  # This will upload the file in your storage
-file.download("MyFile.png")  # This will download the file in the same directory the code is in
-#To download in custom directory, the statement would be - file.download("MyFile.png", path=myPath)
-</pre>
+    #You must change the values of config as your own info, otherwise the code won't work
+    config = {
+        "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+        "authDomain": "variables-2da3.firebaseapp.com",
+        "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+        "storageBucket": "variables-2da3.appspot.com",
+    }
+    file = pyvariable.CloudFile(config, serviceAccount)
+    file.upload("MyFile.png")  #This will upload the file in your storage
+    file.download("MyFile.png")  #This will download the file in the same directory the code is in
+    #To download in custom directory, the statement would be - file.download("MyFile.png", path=myPath)
+    
 Another example of checking if a file exists -
-<pre>
-import pyvariable
 
-#You must change the values of config as your own info, otherwise the code won't work
-config = {
-    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-    "authDomain": "variables-2da3.firebaseapp.com",
-    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "storageBucket": "variables-2da3.appspot.com",
-}
-file = pyvariable.CloudFile(config, serviceAccount)
-if file.exists("NeuralgenLogo.jpg"):  # The method returns true if the variable exists in your database
-      print("The logo exists in your database")
-else:
-      print("The logo doesn't exist in your database")
-</pre>
+    import pyvariable
+
+    #You must change the values of config as your own info, otherwise the code won't work
+    config = {
+        "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+        "authDomain": "variables-2da3.firebaseapp.com",
+        "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+        "storageBucket": "variables-2da3.appspot.com",
+    }
+    file = pyvariable.CloudFile(config, serviceAccount)
+    if file.exists("NeuralgenLogo.jpg"):  #The method returns true if the variable exists in your database
+          print("The logo exists in your database")
+    else:
+          print("The logo doesn't exist in your database")
+
 </br></br>
 <h3><i>A twist: </i> You can save the dictionary items as variables and use in <code> CloudFile</code> whenever you want so that you don't have any chance to lose them. </h3>
 
@@ -190,53 +189,50 @@ else:
 
 # Some example usage
 Example 1.1 (Count how many times a code is run) - Saving in your drive:
-<pre>
-import pyvariable  # Importing the module
 
-count = 0
-data = pyvariable.LocalVariable()  # Create the object
-if not data.exists("count"):  # Create a variable if it doesn't exist
-    data.save("count", 0)
-count = data.read_int("count")  # This will read the value of count and store in count variable
-count = count + 1
-data.save("count", count)  # This will store the variable count with the value John
-print("This program ran " + str(count) + " times")
+    import pyvariable  # Importing the module
 
-</pre>
+    count = 0
+    data = pyvariable.LocalVariable()  # Create the object
+    if not data.exists("count"):  # Create a variable if it doesn't exist
+        data.save("count", 0)
+    count = data.read_int("count")  # This will read the value of count and store in count variable
+    count = count + 1
+    data.save("count", count)  # This will store the variable count with the value John
+    print("This program ran " + str(count) + " times")
+
 </br>
 
 Example 1.2 (Count how many times a code is run) - Saving in online database:
-<pre>
-import pyvariable  # Importing the module
 
-count = 0
-data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
-if not data.exists("count"):  # Create a variable if it doesn't exist
-    data.save("count", 0)
-count = data.read("count")  # This will read the value of count and store in count variable
-count = count + 1
-data.save("count", count)  # This will store the variable count with the value John
-print("This program ran " + str(count) + " times")
+    import pyvariable  # Importing the module
 
-</pre>
+    count = 0
+    data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
+    if not data.exists("count"):  # Create a variable if it doesn't exist
+        data.save("count", 0)
+    count = data.read("count")  # This will read the value of count and store in count variable
+    count = count + 1
+    data.save("count", count)  # This will store the variable count with the value John
+    print("This program ran " + str(count) + " times")
+
 
 </br>
 
 Example 2 (Save an excel file in online storage):
-<pre>
-import pyvariable
 
-#You must change the values of config as your own info, otherwise the code won't work
-config = {
-    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-    "authDomain": "variables-2da3.firebaseapp.com",
-    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "storageBucket": "variables-2da3.appspot.com",
-}
-file = pyvariable.CloudFile(config, serviceAccount)
-file.upload("Data.xlsx")  # This will upload the file in your storage
+    import pyvariable
 
-</pre>
+    #You must change the values of config as your own info, otherwise the code won't work
+    config = {
+        "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+        "authDomain": "variables-2da3.firebaseapp.com",
+        "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+        "storageBucket": "variables-2da3.appspot.com",
+    }
+    file = pyvariable.CloudFile(config, serviceAccount)
+    file.upload("Data.xlsx")  # This will upload the file in your storage
+
 
 </br></br></br></br>
 
