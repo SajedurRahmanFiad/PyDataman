@@ -77,8 +77,8 @@ else:
 </pre>
 <i>Step 11</i>: &nbsp; Finally, come back to <b>Data</b> tab and just copy this url shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
-<i>Step12</i>: &nbsp; Now go to your code and import the module <b>Variables</b>.</br>
-<i>Step13</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
+<i>Step 12</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
+<i>Step 13</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
 
 Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b>
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br>
@@ -86,6 +86,7 @@ Also, call <code> exists()</code> method with name of a variable as argument to 
 Here is a sample code -
 <pre>
 import pyvariable
+
 data = pyvariable.CloudVariable(The_Url_You_Copied)
 data.save("Name", "John")  # This will store the variable Name with the value John
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
@@ -94,6 +95,7 @@ print(LocalName)  # This will print John
 Another example of checking if a variable exists -
 <pre>
 import pyvariable
+
 data = pyvariable.CloudVariable(The_Url_You_Copied)
 if data.exists("X"):  # The method returns true if the variable exists in your database
       print("The variable X exists")
@@ -101,6 +103,84 @@ else:
       print("The variable X doesn't exist")
 </pre>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
+
+
+
+</br></br></br></br>
+
+
+
+# Store files online
+<h3>Setting up your online storage:</h3>
+<i>Step 1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
+<i>Step 2</i>: &nbsp; Login with your google account. </br>
+<i>Step 3</i>: &nbsp; Click on <b>Add Project</b></br>
+<i>Step 4</i>: &nbsp; Enter any name (The name doesn't matter at all). </br>
+<i>Step 5</i>: &nbsp; Disable <b>Google Analytics</b> and click on continue. </br>
+<i>Step 6</i>: &nbsp; The database creation is now finished. </br>
+<i>Step 7</i>: &nbsp; Click on <b>Storage</b> on the left. </br>
+<i>Step 8</i>: &nbsp; Click on <b>Get Started</b> and click next. </br>
+<i>Step 9</i>: &nbsp; Select your nearest location and click done. </br>
+<i>Step 10</i>: &nbsp; Now go to <b> Rules</b> tab and replace the line <code> allow read, write: if request.auth != null;</code> by <code> allow read, write</code> </br>
+<i>Step 11</i>: &nbsp; Then click the settings icon beside <b>Project Overview</b> on the left and select <b>Project settings</b>.</br>
+<i>Step 12</i>: &nbsp; Click on the <code> &lt;/&gt;</code> icon under <b>Your apps</b>.</br>
+<i>Step 13</i>: &nbsp; Enter any name and press register.</br>
+<i>Step 14</i>: &nbsp; Note the items of the dictionary <code> firebaseConfig</code>, it's important.</br>
+<i>Step 15</i>: &nbsp; Click <b>Continue to console</b>.</br>
+<i>Step 16</i>: &nbsp; Now go to <b>Service accounts</b> tab and select <b>Python</b>.</br>
+<i>Step 17</i>: &nbsp; Click on <b>Generate new private key</b> and save the key in any easy-to-remember name.</br>
+<i>Step 18</i>: &nbsp; Finally click on <b>Storage</b> on the left and you are ready for the code.</br>
+<i>Step 19</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
+<i>Step 20</i>: &nbsp; After that create an object of the class <code> CloudFile</code> with these 2 arguments -</br>
+<ul>
+      <li>The dictionary you recently copied.</li>
+      <li>The directory of you private key file</li>
+</ul>
+<b><i>Note 1: You can find the dictionary whenever you need in the general tab in project settings.</i></b></br>
+<b><i>Note 2: You have to modify the dictionary a little bit in Python format because it is written in JavaScript.</i></b></br>
+
+Everything is now ready. Simply call the <code> upload()</code> method with the name and the value of a variable as argument to upload your file online and call the <code> download()</code> method with the name of your variable as argument to download the file. </br> <b><i>Note: By default, the file will save in the same directory your code is in. To change it, modify the argument <code> path</code> in the download method.</i></b>
+Some othe methods available in this class:</br>
+<ul>
+      <li><code> exists (file_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
+      <li><code> download_all (path) </code> - This will download all the files available in your storage</li>
+      <li><code> get_all_file_names () </code> - Ths will return a list of all file names available in your storage.</li>
+</ul>
+</br></br></br>
+Here is a sample code -
+<pre>
+import pyvariable
+
+#You must change the values of config as your own info, otherwise the code won't work
+config = {
+  "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+  "authDomain": "variables-2da3.firebaseapp.com",
+  "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+  "storageBucket": "variables-2da3.appspot.com",
+}
+file = pyvariable.CloudFile(config, serviceAccount)
+file.upload("MyFile.png")  # This will upload the file in your storage
+file.download("MyFile.png")  # This will download the file in the same directory the code is in
+#To download in custom directory, the statement would be - file.download("MyFile.png", path=myPath)
+</pre>
+Another example of checking if a file exists -
+<pre>
+import pyvariable
+
+#You must change the values of config as your own info, otherwise the code won't work
+config = {
+  "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+  "authDomain": "variables-2da3.firebaseapp.com",
+  "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+  "storageBucket": "variables-2da3.appspot.com",
+}
+file = pyvariable.CloudFile(config, serviceAccount)
+if file.exists("NeuralgenLogo.jpg"):  # The method returns true if the variable exists in your database
+      print("The logo exists in your database")
+else:
+      print("The logo doesn't exist in your database")
+</pre>
+
 
 </br></br></br></br>
 
@@ -133,6 +213,24 @@ count = data.read("count")  # This will read the value of count and store in cou
 count = count + 1
 data.save("count", count)  # This will store the variable count with the value John
 print("This program ran " + str(count) + " times")
+
+</pre>
+
+</br>
+
+Example 2 (Save an excel file in online storage):
+<pre>
+import pyvariable
+
+#You must change the values of config as your own info, otherwise the code won't work
+config = {
+  "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+  "authDomain": "variables-2da3.firebaseapp.com",
+  "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+  "storageBucket": "variables-2da3.appspot.com",
+}
+file = pyvariable.CloudFile(config, serviceAccount)
+file.upload("Data.xlsx")  # This will upload the file in your storage
 
 </pre>
 
