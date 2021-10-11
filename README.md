@@ -152,6 +152,7 @@ Here is a sample code -
 <pre>
 import pyvariable
 
+
 #You must change the values of config as your own info, otherwise the code won't work
 config = {
     "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
