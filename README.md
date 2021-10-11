@@ -154,10 +154,10 @@ import pyvariable
 
 #You must change the values of config as your own info, otherwise the code won't work
 config = {
-  "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-  "authDomain": "variables-2da3.firebaseapp.com",
-  "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-  "storageBucket": "variables-2da3.appspot.com",
+    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+    "authDomain": "variables-2da3.firebaseapp.com",
+    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "storageBucket": "variables-2da3.appspot.com",
 }
 file = pyvariable.CloudFile(config, serviceAccount)
 file.upload("MyFile.png")  # This will upload the file in your storage
@@ -170,10 +170,10 @@ import pyvariable
 
 #You must change the values of config as your own info, otherwise the code won't work
 config = {
-  "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-  "authDomain": "variables-2da3.firebaseapp.com",
-  "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-  "storageBucket": "variables-2da3.appspot.com",
+    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+    "authDomain": "variables-2da3.firebaseapp.com",
+    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "storageBucket": "variables-2da3.appspot.com",
 }
 file = pyvariable.CloudFile(config, serviceAccount)
 if file.exists("NeuralgenLogo.jpg"):  # The method returns true if the variable exists in your database
@@ -227,10 +227,10 @@ import pyvariable
 
 #You must change the values of config as your own info, otherwise the code won't work
 config = {
-  "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-  "authDomain": "variables-2da3.firebaseapp.com",
-  "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-  "storageBucket": "variables-2da3.appspot.com",
+    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+    "authDomain": "variables-2da3.firebaseapp.com",
+    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "storageBucket": "variables-2da3.appspot.com",
 }
 file = pyvariable.CloudFile(config, serviceAccount)
 file.upload("Data.xlsx")  # This will upload the file in your storage
