@@ -37,22 +37,22 @@ Import the module and create an object of the class <code> LocalVariable</code>.
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
 </br></br>
 Here is a sample code -
-
+```python
     import pyvariable
     data = pyvariable.LocalVariable()
     data.save("Name", "John")  # This will store the variable Name with the value John
     LocalName = data.read_str("Name")  # This will read the value of Name from files and store in LocalName
     print(LocalName)  # This will print John
-
+```
 Another example of checking if a variable exists -
-
+```python
     import pyvariable
     data = pyvariable.LocalVariable()
     if data.exists("X"):  # The method returns true if the variable exists in your folder
           print("The variable X exists")
     else:
           print("The variable X doesn't exist")
-
+```
 
 </br></br></br></br>
 
@@ -75,7 +75,7 @@ Another example of checking if a variable exists -
         ".write": "True",
       }
     }
-    
+
 <i>Step 11</i>: &nbsp; Finally, come back to <b>Data</b> tab and just copy this url shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
 <i>Step 12</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
@@ -86,6 +86,7 @@ Also, call <code> exists()</code> method with name of a variable as argument to 
 </br></br></br>
 Here is a sample code -
 
+```python
     import pyvariable
 
     data = pyvariable.CloudVariable(The_Url_You_Copied)
@@ -93,7 +94,9 @@ Here is a sample code -
     LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
     print(LocalName)  # This will print John
     
+```
 Another example of checking if a variable exists -
+```python
 
     import pyvariable
 
@@ -102,7 +105,8 @@ Another example of checking if a variable exists -
           print("The variable X exists")
     else:
           print("The variable X doesn't exist")
-          
+
+```
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
 
@@ -149,7 +153,7 @@ Some othe methods available in this class:</br>
 </ul>
 </br></br></br>
 Here is a sample code -
-
+```python
     import pyvariable
 
     #You must change the values of config as your own info, otherwise the code won't work
@@ -163,9 +167,9 @@ Here is a sample code -
     file.upload("MyFile.png")  #This will upload the file in your storage
     file.download("MyFile.png")  #This will download the file in the same directory the code is in
     #To download in custom directory, the statement would be - file.download("MyFile.png", path=myPath)
-    
+```
 Another example of checking if a file exists -
-
+```python
     import pyvariable
 
     #You must change the values of config as your own info, otherwise the code won't work
@@ -180,7 +184,7 @@ Another example of checking if a file exists -
           print("The logo exists in your database")
     else:
           print("The logo doesn't exist in your database")
-
+```
 </br></br>
 <h3><i>A twist: </i> You can save the dictionary items as variables and use in <code> CloudFile</code> whenever you want so that you don't have any chance to lose them. </h3>
 
@@ -190,6 +194,7 @@ Another example of checking if a file exists -
 # Some example usage
 Example 1.1 (Count how many times a code is run) - Saving in your drive:
 
+```python
     import pyvariable  # Importing the module
 
     count = 0
@@ -200,11 +205,12 @@ Example 1.1 (Count how many times a code is run) - Saving in your drive:
     count = count + 1
     data.save("count", count)  # This will store the variable count with the value John
     print("This program ran " + str(count) + " times")
+```
 
 </br>
 
 Example 1.2 (Count how many times a code is run) - Saving in online database:
-
+```python
     import pyvariable  # Importing the module
 
     count = 0
@@ -215,12 +221,12 @@ Example 1.2 (Count how many times a code is run) - Saving in online database:
     count = count + 1
     data.save("count", count)  # This will store the variable count with the value John
     print("This program ran " + str(count) + " times")
-
+```
 
 </br>
 
 Example 2 (Save an excel file in online storage):
-
+```python
     import pyvariable
 
     #You must change the values of config as your own info, otherwise the code won't work
@@ -232,7 +238,7 @@ Example 2 (Save an excel file in online storage):
     }
     file = pyvariable.CloudFile(config, serviceAccount)
     file.upload("Data.xlsx")  # This will upload the file in your storage
-
+```
 
 </br></br></br></br>
 
