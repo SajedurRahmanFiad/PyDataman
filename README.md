@@ -54,7 +54,13 @@ else:
       print("The variable X doesn't exist")
 </pre>
 
+
+
+
 </br></br></br></br>
+
+
+
 
 # Variable in online database
 <h3>Setting up your database:</h3>
@@ -84,6 +90,8 @@ else:
 Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b>
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br>
 </br></br></br>
+
+
 Here is a sample code -
 ```python
 import pyvariable
@@ -93,6 +101,8 @@ data.save("Name", "John")  # This will store the variable Name with the value Jo
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
 print(LocalName)  # This will print John
 ```
+
+
 Another example of checking if a variable exists -
 ```python
 import pyvariable
@@ -103,9 +113,15 @@ if data.exists("X"):  # The method returns true if the variable exists in your d
 else:
       print("The variable X doesn't exist")
 ```
-<b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
+<b><i>Note: You have to use multiple firebase database (Not account) for multiple projects.</i></b>
+
+
+
 
 </br></br></br></br>
+
+
+
 
 # Store files online
 <h3>Setting up your online storage:</h3>
@@ -181,7 +197,15 @@ else:
 <h3><i>A twist: </i> You can save the dictionary items as variables and use in <code> CloudFile</code> whenever you want so that you don't have any chance to lose them. </h3>
 
 
+
+
+
+
 </br></br></br></br>
+
+
+
+
 
 # Some example usage
 Example 1.1 (Count how many times a code is run) - Saving in your drive:
