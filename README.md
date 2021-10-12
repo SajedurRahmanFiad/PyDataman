@@ -85,7 +85,6 @@ Everything is now ready. Simply call the <code> save()</code> method with the na
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br>
 </br></br></br>
 Here is a sample code -
-
 ```python
     import pyvariable
 
@@ -93,11 +92,9 @@ Here is a sample code -
     data.save("Name", "John")  # This will store the variable Name with the value John
     LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
     print(LocalName)  # This will print John
-    
 ```
 Another example of checking if a variable exists -
 ```python
-
     import pyvariable
 
     data = pyvariable.CloudVariable(The_Url_You_Copied)
@@ -105,15 +102,10 @@ Another example of checking if a variable exists -
           print("The variable X exists")
     else:
           print("The variable X doesn't exist")
-
 ```
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects, simply follow from step 3</i></b>
 
-
-
 </br></br></br></br>
-
-
 
 # Store files online
 <h3>Setting up your online storage:</h3>
@@ -152,8 +144,8 @@ Some othe methods available in this class:</br>
       <li><code> get_all_file_names () </code> - Ths will return a list of all file names available in your database.</li>
 </ul>
 </br></br></br>
-Here is a sample code -
-```python
+Here is a sample code - <br>
+<pre>
     import pyvariable
 
     #You must change the values of config as your own info, otherwise the code won't work
@@ -167,9 +159,9 @@ Here is a sample code -
     file.upload("MyFile.png")  #This will upload the file in your storage
     file.download("MyFile.png")  #This will download the file in the same directory the code is in
     #To download in custom directory, the statement would be - file.download("MyFile.png", path=myPath)
-```
+</pre>
 Another example of checking if a file exists -
-```python
+<pre>
     import pyvariable
 
     #You must change the values of config as your own info, otherwise the code won't work
@@ -184,7 +176,7 @@ Another example of checking if a file exists -
           print("The logo exists in your database")
     else:
           print("The logo doesn't exist in your database")
-```
+</pre>
 </br></br>
 <h3><i>A twist: </i> You can save the dictionary items as variables and use in <code> CloudFile</code> whenever you want so that you don't have any chance to lose them. </h3>
 
