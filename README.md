@@ -87,9 +87,9 @@ else:
 <i>Step 12</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
 <i>Step 13</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
 
-Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b>
-Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i> Note: It will return True or False.</i></br>
-</br></br></br>
+Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b></br>
+Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists.<i>It will return True or False.</i></br>
+</br></br>
 
 
 Here is a sample code -
