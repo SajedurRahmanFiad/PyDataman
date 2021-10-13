@@ -148,7 +148,7 @@ else:
 <i>Step 3</i>: &nbsp; Click on <b>Add Project</b></br>
 <i>Step 4</i>: &nbsp; Enter any name (The name doesn't matter at all). </br>
 <i>Step 5</i>: &nbsp; Disable <b>Google Analytics</b> and click on continue. </br>
-<i>Step 6</i>: &nbsp; The database creation is now finished. </br>
+<i>Step 6</i>: &nbsp; The project creation is now finished. </br>
 <i>Step 7</i>: &nbsp; Click on <b>Storage</b> on the left. </br>
 <i>Step 8</i>: &nbsp; Click on <b>Get Started</b> and click next. </br>
 <i>Step 9</i>: &nbsp; Select your nearest location and click done. </br>
@@ -156,7 +156,7 @@ else:
 <i>Step 11</i>: &nbsp; Then click the settings icon beside <b>Project Overview</b> on the left and select <b>Project settings</b>.</br>
 <i>Step 12</i>: &nbsp; Click on the <code> &lt;/&gt;</code> icon under <b>Your apps</b>.</br>
 <i>Step 13</i>: &nbsp; Enter any name and press register.</br>
-<i>Step 14</i>: &nbsp; Note the items of the dictionary <code> firebaseConfig</code>, it's important.</br>
+<i>Step 14</i>: &nbsp; Copy the items of the dictionary <code> firebaseConfig</code>, it's important.</br>
 <i>Step 15</i>: &nbsp; Click <b>Continue to console</b>.</br>
 <i>Step 16</i>: &nbsp; Now go to <b>Service accounts</b> tab and select <b>Python</b>.</br>
 <i>Step 17</i>: &nbsp; Click on <b>Generate new private key</b> and save the key in any easy-to-remember name.</br>
