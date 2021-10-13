@@ -20,10 +20,15 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 <i>Step 3:</i> &nbsp; Enter <code> pip uninstall pycryptodome</code>. </br>
 <i>Step 4:</i> &nbsp; Enter <code> pip install pycryptodome</code>.
 
-</br></br></br></br>
+</br></br></br>
+
+<h3> <i> Note: You can save variables of any data type evne lists, tuples, sets and dictionaries. All of them is supported. </i></h3>
+
+</br></br></br>
 
 # Variable in Folder
-Import the module and create an object of the class <code> LocalVariable</code>. Call the <code> save()</code> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
+</br> Save your variables outside your code so that when you restart your code, you don't lose them. Here's how to do it - </br></br>
+Simply import the module and create an object of the class <code> LocalVariable()</code>. Call the <code> save()</code> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
 <ul>
       <li><code> read_int (var_name) </code></li>
       <li><code> read_float (var_name) </code></li>
@@ -36,23 +41,31 @@ Import the module and create an object of the class <code> LocalVariable</code>.
 </ul>
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
 </br></br>
-Here is a sample code -
-<pre>
+
+Here is a sample code - </br>
+
+```python
 import pyvariable
+
 data = pyvariable.LocalVariable()
+
 data.save("Name", "John")  # This will store the variable Name with the value John
 LocalName = data.read_str("Name")  # This will read the value of Name from files and store in LocalName
 print(LocalName)  # This will print John
-</pre>
+```
+
 Another example of checking if a variable exists -</br>
-<pre>
+
+```python
 import pyvariable
+
 data = pyvariable.LocalVariable()
+
 if data.exists("X"):  # The method returns true if the variable exists in your folder
       print("The variable X exists")
 else:
       print("The variable X doesn't exist")
-</pre>
+```
 
 
 
@@ -63,6 +76,8 @@ else:
 
 
 # Variable in online database
+
+</br> Store your variables online so that everytime you restart your code, you don't lose the values. Even you can create a variable from a device and access it's value from another. Here's how to do these -
 <h3>Setting up your database:</h3>
 <i>Step 1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
 <i>Step 2</i>: &nbsp; Login with your google account. </br>
@@ -97,6 +112,7 @@ Here is a sample code -
 import pyvariable
 
 data = pyvariable.CloudVariable(The_Url_You_Copied)
+
 data.save("Name", "John")  # This will store the variable Name with the value John
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
 print(LocalName)  # This will print John
@@ -108,12 +124,13 @@ Another example of checking if a variable exists -
 import pyvariable
 
 data = pyvariable.CloudVariable(The_Url_You_Copied)
+
 if data.exists("X"):  # The method returns true if the variable exists in your database
       print("The variable X exists")
 else:
       print("The variable X doesn't exist")
 ```
-<b><i>Note: You have to use multiple firebase database (Not account) for multiple projects.</i></b>
+<b><i>Note: You have to use multiple firebase database (Not account) for multiple projects.</i></b></br>
 
 
 
@@ -124,6 +141,7 @@ else:
 
 
 # Store files online
+</br> Store your files online like variables. Yes it's true, and here is how to do it -
 <h3>Setting up your online storage:</h3>
 <i>Step 1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
 <i>Step 2</i>: &nbsp; Login with your google account. </br>
@@ -150,18 +168,20 @@ else:
       <li>The directory of you private key file</li>
 </ul>
 <b><i>Note 1: You can find the dictionary whenever you need in the general tab in project settings.</i></b></br>
-<b><i>Note 2: You have to modify the dictionary a little bit in Python format because it is written in JavaScript.</i></b></br>
+<b><i>Note 2: You have to convert the dictionary to Python as it is written in JavaScript. (Don't worry, you don't need to know javascript)</i></b></br>
 
-Everything is now ready. Simply call the <code> upload()</code> method with the name and the value of a variable as argument to upload your file online and call the <code> download()</code> method with the name of your variable as argument to download the file. </br> <b><i>Note: By default, the file will save in the same directory your code is in. To change it, modify the argument <code> path</code> in the download method.</i></b>
+Everything is now ready. Simply call the <code> upload()</code> method with the name of your variable and the directory of your file (in your local device) as argument to upload your file online and call the <code> download()</code> method with the name of your variable and the path you want to save the file as argument to download the file. </br> <b><i>Note: By default, the file will save in the same directory your code is in. To change it, modify the argument <code> path</code> in the download method.</i></b>
 Some othe methods available in this class:</br>
 <ul>
-      <li><code> exists (file_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
+      <li><code> exists (variable_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
       <li><code> download_all (path) </code> - This will download all the files available in your database</li>
       <li><code> get_all_file_names () </code> - Ths will return a list of all file names available in your database.</li>
 </ul>
 </br></br></br>
+
 Here is a sample code - <br>
-<pre>
+
+```python
 import pyvariable
 
 #You must change the values of config as your own info, otherwise the code won't work
@@ -171,13 +191,15 @@ config = {
     "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
     "storageBucket": "variables-2da3.appspot.com",
 }
+
 file = pyvariable.CloudFile(config, serviceAccount)
-file.upload("MyFile.png")  #This will upload the file in your storage
-file.download("MyFile.png")  #This will download the file in the same directory the code is in
-#To download in custom directory, the statement would be - file.download("MyFile.png", path=myPath)
-</pre>
-Another example of checking if a file exists -
-<pre>
+file.upload("Image", "MyFile.png")  #The file "MyFile.png" is now uploaded as name "Image"
+file.download("Image", path = "MyFile.png")  #This will download the file named "Image" and save as "MyFile.png"
+```
+
+Another example of checking if a file exists in your database - </br>
+
+```python
 import pyvariable
 
 #You must change the values of config as your own info, otherwise the code won't work
@@ -187,14 +209,16 @@ config = {
     "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
     "storageBucket": "variables-2da3.appspot.com",
 }
+
 file = pyvariable.CloudFile(config, serviceAccount)
-if file.exists("NeuralgenLogo.jpg"):  #The method returns true if the variable exists in your database
+if file.exists("Logo"):  #The method returns true if the variable exists in your database
       print("The logo exists in your database")
 else:
       print("The logo doesn't exist in your database")
-</pre>
+```
+
 </br></br>
-<h3><i>A twist: </i> You can save the dictionary items as variables and use in <code> CloudFile</code> whenever you want so that you don't have any chance to lose them. </h3>
+<h3><i>A twist: </i> You can save the firebaseConfig dictionary using <code> CloudVariable()</code> and use in <code> CloudFile()</code> whenever you want so that you don't have any chance to lose them. </h3>
 
 
 
@@ -208,7 +232,7 @@ else:
 
 
 # Some example usage
-Example 1.1 (Count how many times a code is run) - Saving in your drive:
+<h3>Example 1.1 (Count how many times a code is run) - Saving in your drive:</h3></br>
 
 ```python
     import pyvariable  # Importing the module
@@ -217,31 +241,45 @@ Example 1.1 (Count how many times a code is run) - Saving in your drive:
     data = pyvariable.LocalVariable()  # Create the object
     if not data.exists("count"):  # Create a variable if it doesn't exist
         data.save("count", 0)
+        
     count = data.read_int("count")  # This will read the value of count and store in count variable
     count = count + 1
-    data.save("count", count)  # This will store the variable count with the value John
+    
+    data.save("count", count)  # This will store the variable count with the value of count
     print("This program ran " + str(count) + " times")
 ```
 
-</br>
+</br></br>
 
-Example 1.2 (Count how many times a code is run) - Saving in online database:
+<h3>Example 2  (Storing my accounts in online database):</h3></br>
+
 ```python
     import pyvariable  # Importing the module
-
-    count = 0
+    
     data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
-    if not data.exists("count"):  # Create a variable if it doesn't exist
-        data.save("count", 0)
-    count = data.read("count")  # This will read the value of count and store in count variable
-    count = count + 1
-    data.save("count", count)  # This will store the variable count with the value John
-    print("This program ran " + str(count) + " times")
+    
+    Accounts = {"myemail@gmail.com" : "mypassword",
+                  "mysecondemail@gmail.com" : "hardpassword",
+                  "blahblahemail@gmail.com" : "blahblahpassword"}
+                  
+    data.save("MyAccounts", Accounts)  # This will store the dictionary with name MyAccounts
 ```
 
-</br>
+After running the code above, you can run this code from anywhere in the world and any device you want to get the value of MyAccounts -
 
-Example 2 (Save an excel file in online storage):
+```python
+    import pyvariable  # Importing the module
+    
+    data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
+    Accounts = {}
+                  
+    Accounts = data.read("MyAccounts")  # This will load the dictionary MyAccounts from your database
+```
+
+</br></br>
+
+<h3>Example 3 (Save an excel file in online storage):</h3>
+
 ```python
     import pyvariable
 
@@ -252,8 +290,9 @@ Example 2 (Save an excel file in online storage):
         "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
         "storageBucket": "variables-2da3.appspot.com",
     }
+    
     file = pyvariable.CloudFile(config, serviceAccount)
-    file.upload("Data.xlsx")  # This will upload the file in your storage
+    file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your storage
 ```
 
 </br></br></br></br>
