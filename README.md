@@ -308,8 +308,8 @@ After running the code above, you can run this code from anywhere in the world a
 &nbsp;&nbsp; <i>Step 3:</i> &nbsp; Enter <code> pip uninstall pycryptodome</code>. </br>
 &nbsp;&nbsp; <i>Step 4:</i> &nbsp; Enter <code> pip install pycryptodome</code>.
 
-&nbsp;&nbsp; <h3> Problem 2 - After every update, you may have face this type of error while using new features - <code> ... has no attribute ...</code> </h3>
-&nbsp;&nbsp; <b><i>If so, try upgrading the module - </i></b></br>
+&nbsp;&nbsp; <h3> Problem 2 - <code> ... has no attribute ...</code> </h3>
+&nbsp;&nbsp; <b><i>If you get this type of error after the module is updated, try upgrading the module - </i></b></br>
 &nbsp;&nbsp; <i>Step 1:</i> &nbsp; Open your terminal. </br>
 &nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip install pyvariable --upgrade</code>. </br>
 
