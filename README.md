@@ -22,7 +22,7 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 
 </br></br></br>
 
-<h3> <i> Note: You can save variables of any data type evne lists, tuples, sets and dictionaries. All of them is supported. </i></h3>
+<h3> <i> Note: You can save variables of any data type even lists, tuples, sets and dictionaries. All of them is supported. </i></h3>
 
 </br></br></br>
 
