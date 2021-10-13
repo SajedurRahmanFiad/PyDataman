@@ -130,6 +130,8 @@ if data.exists("X"):  # The method returns true if the variable exists in your d
 else:
       print("The variable X doesn't exist")
 ```
+
+</br>
 <b><i>Note: You have to use multiple firebase database (Not account) for multiple projects.</i></b></br>
 
 
@@ -218,7 +220,7 @@ else:
 ```
 
 </br></br>
-<h3><i>A twist: </i> You can save the firebaseConfig dictionary using <code> CloudVariable()</code> and use in <code> CloudFile()</code> whenever you want so that you don't have any chance to lose them. </h3>
+<h4><i>Twist: </i> You can save the firebaseConfig dictionary using <code> CloudVariable()</code> and use in <code> CloudFile()</code> whenever you want so that you don't have any chance to lose them. </h4>
 
 
 
