@@ -14,11 +14,7 @@ One more feature, you can save any of your files in an online databse and downlo
 # Installation
 Installing the module is quite easy ;) </br>
 Simple open your terminal and enter <code> pip install pyvariable</code>.</br></br>
-<b><i>Note: If you face any error like <code> ModuleNotFoundError: No module named 'Crypto'</code>, then follow these steps - </i></b></br>
-<i>Step 1:</i> &nbsp; Open your terminal. </br>
-<i>Step 2:</i> &nbsp; Enter <code> pip uninstall crypto</code>. </br>
-<i>Step 3:</i> &nbsp; Enter <code> pip uninstall pycryptodome</code>. </br>
-<i>Step 4:</i> &nbsp; Enter <code> pip install pycryptodome</code>.
+
 
 </br></br></br>
 
@@ -297,7 +293,26 @@ After running the code above, you can run this code from anywhere in the world a
     file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your storage
 ```
 
+
+
+</br></br></br></br></br>
+
+
+
+
+# Troubleshooting - Some common problems you might face
+&nbsp;&nbsp; <h3> Problem 1 - <code> ModuleNotFoundError: No module named 'Crypto'</code> </h3>
+&nbsp;&nbsp; <b><i>If you get any error like this while running your code, try following these steps - </i></b></br>
+&nbsp;&nbsp; <i>Step 1:</i> &nbsp; Open your terminal. </br>
+&nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip uninstall crypto</code>. </br>
+&nbsp;&nbsp; <i>Step 3:</i> &nbsp; Enter <code> pip uninstall pycryptodome</code>. </br>
+&nbsp;&nbsp; <i>Step 4:</i> &nbsp; Enter <code> pip install pycryptodome</code>.
+
+
+
 </br></br></br></br>
+
+
 
 # Lisence
 This module is completely free and open source. You can freely use and modify the module if you want. Any suggestion will be highly appreciated ;) </br>
