@@ -311,7 +311,7 @@ After running the code above, you can run this code from anywhere in the world a
 &nbsp;&nbsp; <h3> Problem 2 - <code> ... has no attribute ...</code> </h3>
 &nbsp;&nbsp; <b><i>If you get this type of error after the module is updated, try upgrading the module - </i></b></br>
 &nbsp;&nbsp; <i>Step 1:</i> &nbsp; Open your terminal. </br>
-&nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip install pyvariable --upgrade</code>. </br>
+&nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip install pyvariable -U</code>. </br>
 
 
 
