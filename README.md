@@ -230,7 +230,7 @@ else:
 
 
 # Some example usage
-<h3>Example 1.1 (Count how many times a code is run) - Saving in your drive:</h3></br>
+<h3>Example 1.1 (Count how many times a code is run) - Saving in your drive:</h3>
 
 ```python
     import pyvariable  # Importing the module
@@ -249,7 +249,7 @@ else:
 
 </br></br>
 
-<h3>Example 2  (Storing my accounts in online database):</h3></br>
+<h3>Example 2  (Storing my accounts in online database):</h3>
 
 ```python
     import pyvariable  # Importing the module
