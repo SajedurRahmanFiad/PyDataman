@@ -166,7 +166,6 @@ Everything is now ready. Simply call the <code> upload()</code> method with the 
 Some othe methods available in this <code> CloudFile</code>:</br>
 <ul>
       <li><code> exists (variable_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
-      <li><code> download_all (path) </code> - This will download all the files available in your database</li>
       <li><code> get_all_file_names () </code> - Ths will return a list of all file names available in your database.</li>
 </ul>
 </br></br></br>
