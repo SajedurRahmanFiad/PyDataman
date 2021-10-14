@@ -24,17 +24,8 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 
 # Variable in Folder
 </br> Save your variables outside your code so that when you restart your code, you don't lose them. Here's how to do it - </br></br>
-Simply import the module and create an object of the class <code> LocalVariable()</code>. Call the <code> save()</code> method with the name and the value of a variable as argument to store your data locally and call any of the methods from the list below to read the value. </br>
-<ul>
-      <li><code> read_int (var_name) </code></li>
-      <li><code> read_float (var_name) </code></li>
-      <li><code> read_str (var_name) </code></li>
-      <li><code> read_bool (var_name) </code></li>
-      <li><code> read_list (var_name) </code></li>
-      <li><code> read_tuple (var_name) </code></li>
-      <li><code> read_set (var_name) </code></li>
-      <li><code> read_dict (var_name) </code></li>
-</ul>
+Simply import the module and create an object of the class <code> LocalVariable()</code>. Call the <code> save(var_name, value)</code> method with the name and the value of a variable as argument to store your data locally and call <code> read(var_name)</code> to read the value. The value will already be in your desired data type, no need to covert again.</br>
+
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b>
 </br></br></br></br>
 
@@ -46,7 +37,7 @@ import pyvariable
 data = pyvariable.LocalVariable()
 
 data.save("Name", "John")  # This will store the variable Name with the value John
-LocalName = data.read_str("Name")  # This will read the value of Name from files and store in LocalName
+LocalName = data.read("Name")  # This will read the value of Name from files and store in LocalName
 print(LocalName)  # This will print John
 ```
 
@@ -243,7 +234,7 @@ else:
     if not data.exists("count"):  # Create a variable if it doesn't exist
         data.save("count", 0)
         
-    count = data.read_int("count")  # This will read the value of count and store in count variable
+    count = data.read("count")  # This will read the value of count and store in count variable
     count = count + 1
     
     data.save("count", count)  # This will store the variable count with the value of count
