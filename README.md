@@ -7,20 +7,20 @@
 <b>Basically this module is for saving variables outside your code so that you don't lose their value.</b> </br>
 Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyVariable</b>. Yes you can also do it without <b>PyVariable</b>, but you've to write more to do so. </br>
 Again, let's say you don't want a variable to be reset everytime you run your code, here you must use <b>PyVariable</b>. Using <b>PyVariable</b>, you can save a variable in your drive (offline) or in an online database. It's really simple enough.</br></br>
-One more feature, you can save any of your files in an online databse and download from any device whenever and wherever you need them.</br>
+One more feature, you can save any of your files in an online databse and download from any device whenever and wherever you need them.</br></br>
 
-</br></br></br>
+<h3> <i> Note: You can save and read variables of any data type even lists, tuples, sets and dictionaries. All of them is supported. </i></h3>
+
+</br></br></br></br>
 
 # Installation
 Installing the module is quite easy ;) </br>
 Simple open your terminal and enter <code> pip install pyvariable</code>.</br></br>
+<i> Note: If you are having any problem with the installation, feel free to contact me in </i>[Gmail](neural.gen.official@gmail.com) <i>and in </i>[facebook](https://www.facebook.com/neuralgen)
 
 
-</br></br></br>
+</br></br></br></br>
 
-<h3> <i> Note: You can save variables of any data type even lists, tuples, sets and dictionaries. All of them is supported. </i></h3>
-
-</br></br></br>
 
 # Variable in Folder
 </br> Save your variables outside your code so that when you restart your code, you don't lose them. Here's how to do it - </br></br>
@@ -35,8 +35,8 @@ Simply import the module and create an object of the class <code> LocalVariable(
       <li><code> read_set (var_name) </code></li>
       <li><code> read_dict (var_name) </code></li>
 </ul>
-Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b></br>
-</br></br>
+Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b>
+</br></br></br></br>
 
 Here is a sample code - </br>
 
@@ -139,7 +139,7 @@ else:
 
 
 # Store files online
-</br> Store your files online like variables. Yes it's true, and here is how to do it -
+</br> Store your files online like variables, and here is how to do it -
 <h3>Setting up your online storage:</h3>
 <i>Step 1</i>: &nbsp; Go to https://console.firebase.google.com/ </br>
 <i>Step 2</i>: &nbsp; Login with your google account. </br>
@@ -160,16 +160,19 @@ else:
 <i>Step 17</i>: &nbsp; Click on <b>Generate new private key</b> and save the key in any easy-to-remember name.</br>
 <i>Step 18</i>: &nbsp; Finally click on <b>Storage</b> on the left and you are ready for the code.</br>
 <i>Step 19</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
-<i>Step 20</i>: &nbsp; After that create an object of the class <code> CloudFile</code> with these 2 arguments -</br>
+<i>Step 20</i>: &nbsp; After that create an object of the class <code> CloudFile</code> with these 2 arguments -</br></br>
 <ul>
       <li>The dictionary you recently copied.</li>
       <li>The directory of you private key file</li>
-</ul>
-<b><i>Note 1: You can find the dictionary whenever you need in the general tab in project settings.</i></b></br>
+</ul></br></br>
+<b><i>Note 1: You can find the dictionary in the general tab in project settings.</i></b></br>
 <b><i>Note 2: You have to convert the dictionary to Python as it is written in JavaScript. (Don't worry, you don't need to know javascript)</i></b></br>
+<b><i>Note 3: Only <code> "apiKey"</code>, <code> "authDomain"</code>, <code> "databaseURL"</code> and <code> "storageBucket"</code> is needed. Others are optional.</i></b></br></br></br>
 
-Everything is now ready. Simply call the <code> upload()</code> method with the name of your variable and the directory of your file (in your local device) as argument to upload your file online and call the <code> download()</code> method with the name of your variable and the path you want to save the file as argument to download the file. </br> <b><i>Note: By default, the file will save in the same directory your code is in. To change it, modify the argument <code> path</code> in the download method.</i></b>
-Some othe methods available in this class:</br>
+
+Everything is now ready. Simply call the <code> upload()</code> method with the name of your variable and the directory of your file (in your local device) as argument to upload your file online and call the <code> download()</code> method with the name of your variable and the path you want to save the file as argument to download the file. <b></br>
+</br></br>
+Some othe methods available in this <code> CloudFile</code>:</br>
 <ul>
       <li><code> exists (variable_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
       <li><code> download_all (path) </code> - This will download all the files available in your database</li>
