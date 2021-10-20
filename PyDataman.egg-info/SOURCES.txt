@@ -1,0 +1,9 @@
+setup.py
+PyDataman.egg-info/PKG-INFO
+PyDataman.egg-info/SOURCES.txt
+PyDataman.egg-info/dependency_links.txt
+PyDataman.egg-info/not-zip-safe
+PyDataman.egg-info/requires.txt
+PyDataman.egg-info/top_level.txt
+pydataman/__init__.py
+pydataman/pydataman.py
