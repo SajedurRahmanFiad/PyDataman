@@ -82,7 +82,7 @@ else:
 </pre>
 <i>Step 11</i>: &nbsp; Finally, come back to <b>Data</b> tab and just copy this url shown in the image.</br></br>
 <p align="CENTER" style="margin:5px;"><img src="step10.jpg" alt="Step 10" width = 800></p>
-<i>Step 12</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
+<i>Step 12</i>: &nbsp; Now go to your code and import the module <code> pydataman</code>.</br>
 <i>Step 13</i>: &nbsp; After that create an object of the class <code> CloudVariable</code> with the url you copied as argument. </br></br>
 
 Everything is now ready. Simply call the <code> save()</code> method with the name and the value of a variable as argument to store your data online and call the <code> read()</code> method with the name of your variable as argument to read the value of it. </br> <b><i>Note: The returned value will automatically be in your desired data type.</i></b></br>
@@ -92,9 +92,9 @@ Also, call <code> exists()</code> method with name of a variable as argument to 
 
 Here is a sample code -
 ```python
-import pyvariable
+import pydataman
 
-data = pyvariable.CloudVariable(The_Url_You_Copied)
+data = pydataman.CloudVariable(The_Url_You_Copied)
 
 data.save("Name", "John")  # This will store the variable Name with the value John
 LocalName = data.read("Name")  # This will read the value of Name from your database and store in LocalName
@@ -104,9 +104,9 @@ print(LocalName)  # This will print John
 
 Another example of checking if a variable exists -
 ```python
-import pyvariable
+import pydataman
 
-data = pyvariable.CloudVariable(The_Url_You_Copied)
+data = pydataman.CloudVariable(The_Url_You_Copied)
 
 if data.exists("X"):  # The method returns true if the variable exists in your database
       print("The variable X exists")
@@ -157,7 +157,7 @@ else:
 <b><i>Note 3: Only <code> "apiKey"</code>, <code> "authDomain"</code>, <code> "databaseURL"</code> and <code> "storageBucket"</code> is needed. Others are optional.</i></b></br></br></br>
 
 
-Everything is now ready. Simply call the <code> upload()</code> method with the name of your variable and the directory of your file (in your local device) as argument to upload your file online and call the <code> download()</code> method with the name of your variable and the path you want to save the file as argument to download the file. <b></br>
+Everything is now ready. Simply import the module <code> pydataman</code>, call the <code> upload()</code> method with the name of your variable and the directory of your file (in your local device) as argument to upload your file online and call the <code> download()</code> method with the name of your variable and the path you want to save the file as argument to download the file. <b></br>
 </br></br>
 Some othe methods available in this <code> CloudFile</code>:</br>
 <ul>
@@ -169,7 +169,7 @@ Some othe methods available in this <code> CloudFile</code>:</br>
 Here is a sample code - <br>
 
 ```python
-import pyvariable
+import pydataman
 
 #You must change the values of config as your own info, otherwise the code won't work
 config = {
@@ -179,7 +179,7 @@ config = {
     "storageBucket": "variables-2da3.appspot.com",
 }
 
-file = pyvariable.CloudFile(config, serviceAccount)
+file = pydataman.CloudFile(config, serviceAccount)
 file.upload("Image", "MyFile.png")  #The file "MyFile.png" is now uploaded as name "Image"
 file.download("Image", path = "MyFile.png")  #This will download the file named "Image" and save as "MyFile.png"
 ```
@@ -187,7 +187,7 @@ file.download("Image", path = "MyFile.png")  #This will download the file named 
 Another example of checking if a file exists in your database - </br>
 
 ```python
-import pyvariable
+import pydataman
 
 #You must change the values of config as your own info, otherwise the code won't work
 config = {
@@ -197,7 +197,7 @@ config = {
     "storageBucket": "variables-2da3.appspot.com",
 }
 
-file = pyvariable.CloudFile(config, serviceAccount)
+file = pydataman.CloudFile(config, serviceAccount)
 if file.exists("Logo"):  #The method returns true if the variable exists in your database
       print("The logo exists in your database")
 else:
@@ -222,17 +222,16 @@ else:
 <h3>Example 1.1 (Count how many times a code is run) - Saving in your drive:</h3>
 
 ```python
-    import pyvariable  # Importing the module
+    import pydataman  # Importing the module
 
     count = 0
-    data = pyvariable.LocalVariable()  # Create the object
-    if not data.exists("count"):  # Create a variable if it doesn't exist
-        data.save("count", 0)
+    if not pydataman.exists("count"):  # Create a variable if it doesn't exist
+        pydataman.save("count", 0)
         
-    count = data.read("count")  # This will read the value of count and store in count variable
+    count = pydataman.read("count")  # This will read the value of count and store in count variable
     count = count + 1
     
-    data.save("count", count)  # This will store the variable count with the value of count
+    pydataman.save("count", count)  # This will store the variable count with the value of count
     print("This program ran " + str(count) + " times")
 ```
 
@@ -241,9 +240,9 @@ else:
 <h3>Example 2  (Storing my accounts in online database):</h3>
 
 ```python
-    import pyvariable  # Importing the module
+    import pydataman  # Importing the module
     
-    data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
+    data = pydataman.CloudVariable(the_url_you_copied)  # Create the object
     
     Accounts = {"myemail@gmail.com" : "mypassword",
                   "mysecondemail@gmail.com" : "hardpassword",
@@ -255,9 +254,9 @@ else:
 After running the code above, you can run this code from anywhere in the world and any device you want to get the value of MyAccounts -
 
 ```python
-    import pyvariable  # Importing the module
+    import pydataman  # Importing the module
     
-    data = pyvariable.CloudVariable(the_url_you_copied)  # Create the object
+    data = pydataman.CloudVariable(the_url_you_copied)  # Create the object
     Accounts = {}
                   
     Accounts = data.read("MyAccounts")  # This will load the dictionary MyAccounts from your database
@@ -268,7 +267,7 @@ After running the code above, you can run this code from anywhere in the world a
 <h3>Example 3 (Save an excel file in online storage):</h3>
 
 ```python
-    import pyvariable
+    import pydataman
 
     #You must change the values of config as your own info, otherwise the code won't work
     config = {
@@ -278,7 +277,7 @@ After running the code above, you can run this code from anywhere in the world a
         "storageBucket": "variables-2da3.appspot.com",
     }
     
-    file = pyvariable.CloudFile(config, serviceAccount)
+    file = pydataman.CloudFile(config, serviceAccount)
     file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your storage
 ```
 
@@ -300,7 +299,7 @@ After running the code above, you can run this code from anywhere in the world a
 &nbsp;&nbsp; <h3> Problem 2 - <code> ... has no attribute ...</code> </h3>
 &nbsp;&nbsp; <b><i>If you get this type of error after the module is updated, try upgrading the module - </i></b></br>
 &nbsp;&nbsp; <i>Step 1:</i> &nbsp; Open your terminal. </br>
-&nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip install pyvariable -U</code>. </br>
+&nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip install pydataman -U</code>. </br>
 
 
 
