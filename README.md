@@ -3,10 +3,10 @@
 
 </br>
 
-# What is PyVariable?
-<b>Basically this module is for saving variables outside your code so that you don't lose their value.</b> </br>
-Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyVariable</b>. Yes you can also do it without <b>PyVariable</b>, but you've to write more to do so. </br>
-Again, let's say you don't want a variable to be reset everytime you run your code, here you must use <b>PyVariable</b>. Using <b>PyVariable</b>, you can save a variable in your drive (offline) or in an online database. It's really simple enough.</br></br>
+# What is PyDataman?
+<b>Basically this module is for saving data specially variables including other data like images or text files outside your code so that you don't lose them.</b> </br>
+Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyDataman</b>. Yes you can also do it without <b>PyDataman</b>, but you've to write more to do so. </br>
+Again, let's say you don't want a variable to be reset everytime you run your code, here you must use <b>PyVariable</b>. Using <b>PyDataman</b>, you can save a variable in your drive (offline) or in an online database. It's really simple enough.</br></br>
 One more feature, you can save any of your files in an online databse and download from any device whenever and wherever you need them.</br></br>
 
 <h3> <i> Note: You can save and read variables of any data type even lists, tuples, sets and dictionaries. All of them is supported. </i></h3>
@@ -15,7 +15,7 @@ One more feature, you can save any of your files in an online databse and downlo
 
 # Installation
 Installing the module is quite easy ;) </br>
-Simple open your terminal and enter <code> pip install pyvariable</code>.</br></br>
+Simple open your terminal and enter <code> pip install pydataman</code>.</br></br>
 <i> Note: If you are having any problem with the installation, feel free to contact me in </i>[Gmail](neural.gen.official@gmail.com) <i>and in </i>[facebook](https://www.facebook.com/neuralgen)
 
 
@@ -23,8 +23,8 @@ Simple open your terminal and enter <code> pip install pyvariable</code>.</br></
 
 
 # Variable in Folder
-</br> Save your variables outside your code so that when you restart your code, you don't lose them. Here's how to do it - </br></br>
-Simply import the module and create an object of the class <code> LocalVariable()</code>. Call the <code> save(var_name, value)</code> method with the name and the value of a variable as argument to store your data locally and call <code> read(var_name)</code> to read the value. The value will already be in your desired data type, no need to covert again.</br>
+</br> Save your variables outside your code so that whenever you restart your code, you won't lose them. Here's how to do it - </br></br>
+Simply import the module. Call the <code> save(var_name, value)</code> method with the name and the value of a variable as argument to store your data locally and call <code> read(var_name)</code> to read the value. The value will already be in your desired data type, no need to covert again.</br>
 
 Also, call <code> exists()</code> method with name of a variable as argument to check if the variable exists. </br> <b><i>Note: It will return True or False.</i></b>
 </br></br></br></br>
@@ -32,23 +32,19 @@ Also, call <code> exists()</code> method with name of a variable as argument to 
 Here is a sample code - </br>
 
 ```python
-import pyvariable
+import pydataman
 
-data = pyvariable.LocalVariable()
-
-data.save("Name", "John")  # This will store the variable Name with the value John
-LocalName = data.read("Name")  # This will read the value of Name from files and store in LocalName
+pydataman.save("Name", "John")  # This will store the variable Name with the value John
+LocalName = pydataman.read("Name")  # This will read the value of Name from files and store in LocalName
 print(LocalName)  # This will print John
 ```
 
 Another example of checking if a variable exists -</br>
 
 ```python
-import pyvariable
+import pydataman
 
-data = pyvariable.LocalVariable()
-
-if data.exists("X"):  # The method returns true if the variable exists in your folder
+if pydataman.exists("X"):  # The method returns true if the variable exists in your folder
       print("The variable X exists")
 else:
       print("The variable X doesn't exist")
