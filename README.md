@@ -146,7 +146,7 @@ else:
 <i>Step 16</i>: &nbsp; Now go to <b>Service accounts</b> tab and select <b>Python</b>.</br>
 <i>Step 17</i>: &nbsp; Click on <b>Generate new private key</b> and save the key in any easy-to-remember name.</br>
 <i>Step 18</i>: &nbsp; Finally click on <b>Storage</b> on the left and you are ready for the code.</br>
-<i>Step 19</i>: &nbsp; Now go to your code and import the module <code> pyvariable</code>.</br>
+<i>Step 19</i>: &nbsp; Now go to your code and import the module <code> pydataman</code>.</br>
 <i>Step 20</i>: &nbsp; After that create an object of the class <code> CloudFile</code> with these 2 arguments -</br></br>
 <ul>
       <li>The dictionary you recently copied.</li>
@@ -161,8 +161,8 @@ Everything is now ready. Simply import the module <code> pydataman</code>, call 
 </br></br>
 Some othe methods available in this <code> CloudFile</code>:</br>
 <ul>
-      <li><code> exists (variable_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
-      <li><code> all_vars () </code> - Ths will return a list of all file names available in your database.</li>
+      <li><code> exists(variable_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
+      <li><code> all_vars() </code> - Ths will return a list of all file names available in your database.</li>
 </ul>
 </br></br></br>
 
