@@ -222,17 +222,17 @@ else:
 <h3>Example 1.1 (Count how many times a code is run) - Saving in your drive:</h3>
 
 ```python
-    import pydataman  # Importing the module
+import pydataman  # Importing the module
 
-    count = 0
-    if not pydataman.exists("count"):  # Create a variable if it doesn't exist
-        pydataman.save("count", 0)
+count = 0
+if not pydataman.exists("count"):  # Create a variable if it doesn't exist
+    pydataman.save("count", 0)
         
-    count = pydataman.read("count")  # This will read the value of count and store in count variable
-    count = count + 1
+count = pydataman.read("count")  # This will read the value of count and store in count variable
+count = count + 1
     
-    pydataman.save("count", count)  # This will store the variable count with the value of count
-    print("This program ran " + str(count) + " times")
+pydataman.save("count", count)  # This will store the variable count with the value of count
+print("This program ran " + str(count) + " times")
 ```
 
 </br></br>
@@ -240,26 +240,26 @@ else:
 <h3>Example 2  (Storing my accounts in online database):</h3>
 
 ```python
-    import pydataman  # Importing the module
+import pydataman  # Importing the module
     
-    data = pydataman.CloudVariable(the_url_you_copied)  # Create the object
+data = pydataman.CloudVariable(the_url_you_copied)  # Create the object
     
-    Accounts = {"myemail@gmail.com" : "mypassword",
-                  "mysecondemail@gmail.com" : "hardpassword",
-                  "blahblahemail@gmail.com" : "blahblahpassword"}
+Accounts = {"myemail@gmail.com" : "mypassword",
+              "mysecondemail@gmail.com" : "hardpassword",
+              "blahblahemail@gmail.com" : "blahblahpassword"}
                   
-    data.save("MyAccounts", Accounts)  # This will store the dictionary with name MyAccounts
+data.save("MyAccounts", Accounts)  # This will store the dictionary with name MyAccounts
 ```
 
 After running the code above, you can run this code from anywhere in the world and any device you want to get the value of MyAccounts -
 
 ```python
-    import pydataman  # Importing the module
+import pydataman  # Importing the module
     
-    data = pydataman.CloudVariable(the_url_you_copied)  # Create the object
-    Accounts = {}
+data = pydataman.CloudVariable(the_url_you_copied)  # Create the object
+Accounts = {}
                   
-    Accounts = data.read("MyAccounts")  # This will load the dictionary MyAccounts from your database
+Accounts = data.read("MyAccounts")  # This will load the dictionary MyAccounts from your database
 ```
 
 </br></br>
@@ -267,18 +267,18 @@ After running the code above, you can run this code from anywhere in the world a
 <h3>Example 3 (Save an excel file in online storage):</h3>
 
 ```python
-    import pydataman
+import pydataman
 
-    #You must change the values of config as your own info, otherwise the code won't work
-    config = {
-        "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-        "authDomain": "variables-2da3.firebaseapp.com",
-        "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-        "storageBucket": "variables-2da3.appspot.com",
-    }
+#You must change the values of config as your own info, otherwise the code won't work
+config = {
+    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
+    "authDomain": "variables-2da3.firebaseapp.com",
+    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "storageBucket": "variables-2da3.appspot.com",
+}
     
-    file = pydataman.CloudFile(config, serviceAccount)
-    file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your storage
+file = pydataman.CloudFile(config, serviceAccount)
+file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your storage
 ```
 
 
