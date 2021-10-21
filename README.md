@@ -3,8 +3,16 @@
 
 </br>
 
+<h3>Are you having problem keeping variables outside of your python program
+or writting and managing codes for your cloud database? 🥵</h3>
+
+<h4>Don't destroy your pc or damage your head ❌. </h4>
+Try <b>PyDataman</b> 👷‍♂️, he will do all the hard works on your behalf!!
+
+</br></br></br></br>
+
 # What is PyDataman?
-<b>Basically this module is for saving data specially variables including other data like images or text files outside your code so that you don't lose them.</b> </br>
+<b>Basically this module is for saving data specially variables including other data like images or text files outside your code so that you never ever lose them.</b> </br>
 Let's say you've created a game with pygame. There is a high score system and you want to save the highest score in an online database so that users all over the world can see the highest score. Here comes the usage of <b>PyDataman</b>. Yes you can also do it without <b>PyDataman</b>, but you've to write more to do so. </br>
 Again, let's say you don't want a variable to be reset everytime you run your code, here you must use <b>PyVariable</b>. Using <b>PyDataman</b>, you can save a variable in your drive (offline) or in an online database. It's really simple enough.</br></br>
 One more feature, you can save any of your files in an online databse and download from any device whenever and wherever you need them.</br></br>
