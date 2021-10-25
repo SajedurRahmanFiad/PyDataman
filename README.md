@@ -317,6 +317,6 @@ file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your sto
 
 # Lisence
 This module is completely free and open source. You can freely use and modify the module if you want. Any suggestion will be highly appreciated ;) </br>
-Created by <b> Sajedur Rahman Fiad</b> and <b>Jonayed Mohiuddin Shanto</b> </br>
+Created by <b><i> Sajedur Rahman Fiad</i></b> and <b><i>Jonayed Mohiuddin Shanto</i></b> </br>
 Email : <code> neural.gen.official@gmail.com</code> </br></br>
 <i> Let me know your valuable feedback. </i>
