@@ -183,7 +183,7 @@ config = {
 serviceAccount = "Creds.json"
 
 pydataman.InitializeDatabase(config, serviceAccount)
-MyImage = NewFile("Cat.png")
+MyImage = pydataman.NewFile("Cat.png")
 MyImage.upload()  #The file "MyFile.png" is now uploaded to your database
 MyImage.download()  #This will download the file named and save as "Cat.png"
 ```
@@ -265,7 +265,7 @@ config = {
 serviceAccount = "Creds.json"
     
 pydataman.InitializeDatabase(config, serviceAccount)
-MyExcelFile = "Data.xlsx"
+MyExcelFile = pydataman.NewFile("Data.xlsx")
 MyExcelFile.upload()  # This will upload the file in your storage
 ```
 
