@@ -155,23 +155,17 @@ else:
 <i>Step 17</i>: &nbsp; Click on <b>Generate new private key</b> and save the key in any easy-to-remember name.</br>
 <i>Step 18</i>: &nbsp; Finally click on <b>Storage</b> on the left and you are ready for the code.</br>
 <i>Step 19</i>: &nbsp; Now go to your code and import the module <code> pydataman</code>.</br>
-<i>Step 20</i>: &nbsp; After that create an object of the class <code> CloudFile</code> with these 2 arguments -</br></br>
+<i>Step 20</i>: &nbsp; After that create call the function <code> InitializeDatabase</code> with these 2 arguments -</br></br>
 <ul>
       <li>The dictionary you recently copied.</li>
       <li>The directory of you private key file</li>
 </ul></br></br>
 <b><i>Note 1: You can find the dictionary in the general tab in project settings.</i></b></br>
-<b><i>Note 2: You have to convert the dictionary to Python as it is written in JavaScript. (Don't worry, you don't need to know javascript)</i></b></br>
+<b><i>Note 2: You have to convert the dictionary to Python as it is written in JavaScript. (Don't worry, you don't have to know javascript)</i></b></br>
 <b><i>Note 3: Only <code> "apiKey"</code>, <code> "authDomain"</code>, <code> "databaseURL"</code> and <code> "storageBucket"</code> is needed. Others are optional.</i></b></br></br></br>
 
 
-Everything is now ready. Simply import the module <code> pydataman</code>, call the <code> upload()</code> method with the name of your variable and the directory of your file (in your local device) as argument to upload your file online and call the <code> download()</code> method with the name of your variable and the path you want to save the file as argument to download the file. <b></br>
-</br></br>
-Some othe methods available in this <code> CloudFile</code>:</br>
-<ul>
-      <li><code> exists(variable_name) </code> - This will search for a file, returns True if the file exists and False if it doesn't.</li>
-      <li><code> all_vars() </code> - Ths will return a list of all file names available in your database.</li>
-</ul>
+Everything is now ready. Create an object of the class <code> NewFile()</code> with the directory of your file (in your local device) as argument. To upload your file, call the <code> upload</code> method of <code> NewFile()</code> instance, and call the <code> download()</code> method to download the file. <b></br>
 </br></br></br>
 
 Here is a sample code - <br>
@@ -186,34 +180,18 @@ config = {
     "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
     "storageBucket": "variables-2da3.appspot.com",
 }
+serviceAccount = "Creds.json"
 
-file = pydataman.CloudFile(config, serviceAccount)
-file.upload("Image", "MyFile.png")  #The file "MyFile.png" is now uploaded as name "Image"
-file.download("Image", path = "MyFile.png")  #This will download the file named "Image" and save as "MyFile.png"
+pydataman.InitializeDatabase(config, serviceAccount)
+MyImage = NewFile("Cat.png")
+MyImage.upload()  #The file "MyFile.png" is now uploaded to your database
+MyImage.download()  #This will download the file named and save as "Cat.png"
 ```
 
-Another example of checking if a file exists in your database - </br>
 
-```python
-import pydataman
-
-#You must change the values of config as your own info, otherwise the code won't work
-config = {
-    "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rj",
-    "authDomain": "variables-2da3.firebaseapp.com",
-    "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "storageBucket": "variables-2da3.appspot.com",
-}
-
-file = pydataman.CloudFile(config, serviceAccount)
-if file.exists("Logo"):  #The method returns true if the variable exists in your database
-      print("The logo exists in your database")
-else:
-      print("The logo doesn't exist in your database")
-```
 
 </br></br>
-<h4><i>Twist: </i> You can save the firebaseConfig dictionary using <code> CloudVariable()</code> and use in <code> CloudFile()</code> whenever you want so that you don't have any chance to lose them. </h4>
+<h4><i>Twist: </i> You can save the firebaseConfig dictionary using <code> CloudVariable()</code> and use in <code> InitializeDatabase()</code> whenever you want so that you don't have any chance to lose them. </h4>
 
 
 
@@ -284,9 +262,11 @@ config = {
     "databaseURL": "https://variables-2da3-default-rtdb.asia-southeast1.firebasedatabase.app",
     "storageBucket": "variables-2da3.appspot.com",
 }
+serviceAccount = "Creds.json"
     
-file = pydataman.CloudFile(config, serviceAccount)
-file.upload("MyExcelFile", "Data.xlsx")  # This will upload the file in your storage
+pydataman.InitializeDatabase(config, serviceAccount)
+MyExcelFile = "Data.xlsx"
+MyExcelFile.upload()  # This will upload the file in your storage
 ```
 
 
