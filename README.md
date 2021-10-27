@@ -166,6 +166,7 @@ else:
 
 
 Everything is now ready. Create an object of the class <code> NewFile()</code> with the directory of your file (in your local device) as argument. To upload your file, call the <code> upload</code> method of <code> NewFile()</code> instance, and call the <code> download()</code> method to download the file. <b></br>
+<h3>One thing to remember, you can only upload and download files that is in the directory where your code is</h3>
 </br></br></br>
 
 Here is a sample code - <br>
