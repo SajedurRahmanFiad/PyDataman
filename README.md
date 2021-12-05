@@ -290,6 +290,9 @@ MyExcelFile.upload()  # This will upload the file in your storage
 &nbsp;&nbsp; <i>Step 1:</i> &nbsp; Open your terminal. </br>
 &nbsp;&nbsp; <i>Step 2:</i> &nbsp; Enter <code> pip install pydataman -U</code>. </br>
 
+&nbsp;&nbsp; <h3> Problem 3 - <code> ModuleNotFoundError: No module named 'sseclient'</code>  </h3>
+&nbsp;&nbsp; <b><i>If you get any error like this while running your code, try opening up terminal and enter - <code> pip install sseclient</code>.</i></b></br>
+
 
 
 </br></br></br></br>
