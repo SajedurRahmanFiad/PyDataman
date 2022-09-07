@@ -185,8 +185,8 @@ serviceAccount = "Creds.json"
 
 pydataman.InitializeDatabase(config, serviceAccount)
 MyImage = pydataman.NewFile("Cat.png")
-MyImage.upload()  #The file "MyFile.png" is now uploaded to your database
-MyImage.download()  #This will download the file named and save as "Cat.png"
+MyImage.upload()  #The file "Cat.png" is now uploaded to your database
+MyImage.download()  #This will download the file and save as "Cat.png"
 ```
 
 
