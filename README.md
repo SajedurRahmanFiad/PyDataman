@@ -75,7 +75,7 @@ else:
 <i>Step 3</i>: &nbsp; Click on <b>Add Project</b></br>
 <i>Step 4</i>: &nbsp; Enter any name (The name doesn't matter at all). </br>
 <i>Step 5</i>: &nbsp; Disable <b>Google Analytics</b> and click on continue. </br>
-<i>Step 6</i>: &nbsp; After the the database creation is finished, click on continue and you'll see a window like this. </br>
+<i>Step 6</i>: &nbsp; After the the database creation is finished, click on continue. </br>
 <i>Step 7</i>: &nbsp; Click on <b>Realtime Database</b> on the left. </br>
 <i>Step 8</i>: &nbsp; Click on <b>Create Database</b> and select your nearest location. </br>
 <i>Step 9</i>: &nbsp; After clicking <b>Next</b>, Select <b>Start in test mode</b> and click on <b>Enable</b> </br>
