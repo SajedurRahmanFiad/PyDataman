@@ -83,8 +83,8 @@ else:
 <pre>
 {
   "rules": {
-    ".read": "True",
-    ".write": "True",
+    ".read": "true",
+    ".write": "true",
   }
 }
 </pre>
