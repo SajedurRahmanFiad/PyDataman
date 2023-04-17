@@ -24,7 +24,7 @@ One more feature, you can save any of your files in an online databse and downlo
 # Installation
 Installing the module is quite easy ;) </br>
 Simple open your terminal and enter <code> pip install pydataman</code>.</br></br>
-<i> Note: If you are having any problem with the installation, feel free to contact me in </i>[Gmail](neural.gen.official@gmail.com) <i>and in </i>[facebook](https://www.facebook.com/neuralgen)
+<i> Note: If you are having any problem with the installation, feel free to contact me in </i>[Gmail](mailto:neural.gen.official@gmail.com) <i>and in </i>[facebook](https://www.facebook.com/neuralgen)
 
 
 </br></br></br></br>
