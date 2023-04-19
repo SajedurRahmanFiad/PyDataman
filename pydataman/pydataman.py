@@ -310,9 +310,9 @@ if __name__ == "__main__":
     #print(data.read("Num"))
 
     firebaseConfig = {
-        "apiKey": "AIzaSyBy37khExSIw-XZK2kT17_P1jPSxDt2rjQ",
+        "apiKey": "api_key",
         "authDomain": "variables-2d2a3.firebaseapp.com",
-        "databaseURL": "https://variables-2d2a3-default-rtdb.asia-southeast1.firebasedatabase.app",
+        "databaseURL": "db_url",
         "projectId": "variables-2d2a3",
         "storageBucket": "variables-2d2a3.appspot.com",
         "messagingSenderId": "1058592867243",
