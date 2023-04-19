@@ -1,7 +1,7 @@
 {
   "type": "service_account",
   "project_id": "variables-2d2a3",
-  "private_key_id": "9034bd18138c4fe7f870c948336e65d3866640ab",
+  "private_key_id": "private key id",
   "private_key": "my private key",
   "client_email": "firebase-adminsdk-56e86@variables-2d2a3.iam.gserviceaccount.com",
   "client_id": "100895361529407081549",
