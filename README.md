@@ -301,6 +301,6 @@ MyExcelFile.upload()  # This will upload the file in your storage
 
 # Lisence
 This module is completely free and open source. You can freely use and modify the module if you want. Any suggestion will be highly appreciated ;) </br>
-Created by <b><i> Sajedur Rahman Fiad</i></b> and <b><i>Jonayed Mohiuddin Shanto.</i></b> </br>
+Developed by <b><i> Sajedur Rahman Fiad</i></b> </br>
 Email : <code> scientistfiad@gmail.com</code> </br></br>
 <i> Let me know your valuable feedback. </i>
